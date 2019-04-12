@@ -1,5 +1,5 @@
 # Udemy bug bounty report 
-
+Udemy bug bounty is provided by [HackerOne.com](https://hackerone.com/udemy). 
 ## Policy
 If you believe you have found a security vulnerability on the Udemy site, we encourage you to provide additional details right away. We will investigate all legitimate reports and do our best to fix these problems as quickly as possible, given the level of threat involved.
 
@@ -21,6 +21,7 @@ Here’s more information on our bounty program:
     - All of the following subdomains are NOT in scope:
         - about, affiliate, blog, business, community, press, teach, learning, research, support, mi, helpdesk - or any additional word press sites not listed.
 
+Scope 
 ### Vulnerability Types
 * Remote Shell / Command Execution
 * Remote Code Execution
