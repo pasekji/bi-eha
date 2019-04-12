@@ -1,5 +1,5 @@
 # Udemy bug bounty report 
-Udemy bug bounty is provided by [HackerOne.com](https://hackerone.com/udemy). 
+Udemy bug bounty program is provided by [HackerOne.com](https://hackerone.com/udemy). 
 ## Policy
 If you believe you have found a security vulnerability on the Udemy site, we encourage you to provide additional details right away. We will investigate all legitimate reports and do our best to fix these problems as quickly as possible, given the level of threat involved.
 
