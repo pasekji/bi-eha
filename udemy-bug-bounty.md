@@ -21,7 +21,7 @@ Here’s more information on our bounty program:
     - All of the following subdomains are NOT in scope:
         - about, affiliate, blog, business, community, press, teach, learning, research, support, mi, helpdesk - or any additional word press sites not listed.
 
-##Scope
+## Scope
 - [Udemy.com](https://www.udemy.com/)
 
 ### Vulnerability Types
