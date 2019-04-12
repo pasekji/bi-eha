@@ -7,29 +7,29 @@ Udemy’s bounty program is designed to reward those who help us maintain a safe
 
 Here’s more information on our bounty program:
 
-You must provide all the details of the vulnerability up front before we consider possible rewards
-The security bug must be original and previously unreported. Known vulnerabilities will not qualify for a reward
-Udemy reserves the right to not give a bounty payment if we believe the actions of the reporter have endangered the security of Udemy’s end users.
-The issue must be resolved by our engineers before the reward is provided
-Out of scope reports include the following:
-
-No XSS reports temporarily - we are behind on fixing and analysing them
-Self-XSS, attacks that do not have the possibility of targeting other users
-Exploits that require significant social engineering
-Please do not submit any reports mentioning password reset links or cookie reuse. This is in progress.
-SMTP, DMARC, etc. email records settings
-Video streaming or downloading videos
-All of the following subdomains are NOT in scope:
-about, affiliate, blog, business, community, press, teach, learning, research, support, mi, helpdesk - or any additional word press sites not listed.
+- You must provide all the details of the vulnerability up front before we consider possible rewards
+- The security bug must be original and previously unreported. Known vulnerabilities will not qualify for a reward
+- Udemy reserves the right to not give a bounty payment if we believe the actions of the reporter have endangered the security of Udemy’s end users.
+- The issue must be resolved by our engineers before the reward is provided
+- Out of scope reports include the following:
+    - No XSS reports temporarily - we are behind on fixing and analysing them
+    - Self-XSS, attacks that do not have the possibility of targeting other users
+    - Exploits that require significant social engineering
+    - Please do not submit any reports mentioning password reset links or cookie reuse. This is in progress.
+    - SMTP, DMARC, etc. email records settings
+    - Video streaming or downloading videos
+    -All of the following subdomains are NOT in scope:
+        - about, affiliate, blog, business, community, press, teach, learning, research, support, mi, helpdesk - or any additional word press sites not listed.
 
 ### Vulnerability Types
-Remote Shell / Command Execution
-Remote Code Execution
-SQL Injection (with output)
-Significant Authentication Bypass
-Local file Inclusion
-SQL Injection (blind)
-Insecure Direct Object References
-Server Side Request Forgery
-Stored Cross Site Scripting
-Other Cross Site Scripting
+* Remote Shell / Command Execution
+* Remote Code Execution
+* SQL Injection (with output)
+* Significant Authentication Bypass
+* Local file Inclusion
+* SQL Injection (blind)
+* Insecure Direct Object References
+* Server Side Request Forgery
+* Stored Cross Site Scripting
+* Other Cross Site Scripting
+
