@@ -18,7 +18,7 @@ Here’s more information on our bounty program:
     - Please do not submit any reports mentioning password reset links or cookie reuse. This is in progress.
     - SMTP, DMARC, etc. email records settings
     - Video streaming or downloading videos
-    -All of the following subdomains are NOT in scope:
+    - All of the following subdomains are NOT in scope:
         - about, affiliate, blog, business, community, press, teach, learning, research, support, mi, helpdesk - or any additional word press sites not listed.
 
 ### Vulnerability Types
