@@ -49,10 +49,11 @@ In Command Injection, the attacker extends the default functionality of the appl
 ### Command Injection using DVWA
 _"Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. 
 Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, 
-help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment."_
+help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment."_[2]
 
 
 
 
 ### References
 [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
+[2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
