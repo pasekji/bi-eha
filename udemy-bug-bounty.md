@@ -46,7 +46,7 @@ Command injection attacks are possible largely due to insufficient input validat
 This attack differs from Code Injection, in that code injection allows the attacker to add his own code that is then executed by the application. 
 In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code. [1]
 
-### Command Injection using DVWA
+### Command Injection explained in DVWA
 _"Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. 
 Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, 
 help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment."_ [2]
