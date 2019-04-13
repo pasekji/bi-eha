@@ -44,7 +44,13 @@ In this attack, the attacker-supplied operating system commands are usually exec
 Command injection attacks are possible largely due to insufficient input validation.
 
 This attack differs from Code Injection, in that code injection allows the attacker to add his own code that is then executed by the application. 
-In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code.
+In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code. [1]
 
 ### Command Injection using DVWA
 
+
+
+
+
+### References
+[1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
