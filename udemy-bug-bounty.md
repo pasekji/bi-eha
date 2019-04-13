@@ -46,7 +46,7 @@ Command injection attacks are possible largely due to insufficient input validat
 This attack differs from Code Injection, in that code injection allows the attacker to add his own code that is then executed by the application. 
 In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code. [1]
 
-### Command Injection using DVWA
+### Command Injection security explained in DVWA
 _"Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. 
 Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, 
 help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment."_ [2]
@@ -58,11 +58,11 @@ Command injection attacks are possible in most cases because of lack of correct 
 The syntax and commands may differ between the Operating Systems (OS), such as Linux and Windows, depending on their desired actions.
 This attack may also be called "Remote Command Execution (RCE)".
 
-#### Low level Command Injection
+#### Low security level Command Injection
 This allows for direct input into one of many PHP functions that will execute commands on the OS. 
 It is possible to escape out of the designed command and executed unintentional actions.
 
-##### Low level Command Injection Script
+##### Low security level Command Injection Script
 ```php
 <?php
 
