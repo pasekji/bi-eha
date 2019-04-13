@@ -37,7 +37,7 @@ Here’s more information on our bounty program:
 * Stored Cross Site Scripting
 * Other Cross Site Scripting
 
-## 1. Remote Shell / Command Execution
+## 1. Remote Shell / Command Injection
 Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
 Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. 
 In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. 
@@ -47,7 +47,9 @@ This attack differs from Code Injection, in that code injection allows the attac
 In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code. [1]
 
 ### Command Injection using DVWA
-
+_**Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. 
+Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, 
+help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.**_
 
 
 
