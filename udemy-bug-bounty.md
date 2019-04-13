@@ -1,5 +1,6 @@
 # Udemy bug bounty report 
 Udemy bug bounty program is provided by [HackerOne.com](https://hackerone.com/udemy). 
+
 ## Policy
 If you believe you have found a security vulnerability on the Udemy site, we encourage you to provide additional details right away. We will investigate all legitimate reports and do our best to fix these problems as quickly as possible, given the level of threat involved.
 
@@ -25,7 +26,7 @@ Here’s more information on our bounty program:
 - [Udemy.com](https://www.udemy.com/)
 
 ### Vulnerability Types
-* Remote Shell / Command Execution
+* Remote Shell / Command Injection
 * Remote Code Execution
 * SQL Injection (with output)
 * Significant Authentication Bypass
@@ -44,3 +45,6 @@ Command injection attacks are possible largely due to insufficient input validat
 
 This attack differs from Code Injection, in that code injection allows the attacker to add his own code that is then executed by the application. 
 In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code.
+
+### Command Injection using DVWA
+
