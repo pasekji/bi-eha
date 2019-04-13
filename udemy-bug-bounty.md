@@ -58,6 +58,9 @@ Command injection attacks are possible in most cases because of lack of correct 
 The syntax and commands may differ between the Operating Systems (OS), such as Linux and Windows, depending on their desired actions.
 This attack may also be called "Remote Command Execution (RCE)".
 
+** Low level Command Injection ** 
+
+
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
