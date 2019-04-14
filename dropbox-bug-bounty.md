@@ -6,17 +6,17 @@ Keeping user information safe and secure is a top priority and a core company va
 We welcome the contribution of external security researchers and look forward to awarding them for their invaluable contribution to the security of all Dropbox users.
 
 To promote the discovery and reporting of vulnerabilities and increase user safety, we ask that you:
-- Share the security issue with us in detail;
+- Share the security issue with us in detail.
 - Please be respectful of our existing applications. 
 - Spamming forms through automated vulnerability scanners will not result in any bounty or award since those are explicitly out of scope;
-- Give us a reasonable time to respond to the issue before making any information about it public;
-- Do not access or modify our data or our users’ data, without explicit permission of the owner. Only interact with your own accounts or test accounts for security research purposes;
-- Contact us immediately if you do inadvertently encounter user data. Do not view, alter, save, store, transfer, or otherwise access the data, and immediately purge any local information upon reporting the vulnerability to Dropbox;
-- Act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of our services (including denial of service); and
+- Give us a reasonable time to respond to the issue before making any information about it public.
+- Do not access or modify our data or our users’ data, without explicit permission of the owner. Only interact with your own accounts or test accounts for security research purposes.
+- Contact us immediately if you do inadvertently encounter user data. Do not view, alter, save, store, transfer, or otherwise access the data, and immediately purge any local information upon reporting the vulnerability to Dropbox.
+- Act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of our services (including denial of service). 
 - Otherwise comply with all applicable laws.
 
 ## Scope
-- [dropbox.com](https://www.dropbox.com/)
+- [Dropbox.com](https://www.dropbox.com/)
 
 ### Vulnerability Types
 * Remote Shell / Command Injection
