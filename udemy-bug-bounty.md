@@ -1,29 +1,22 @@
-# Udemy bug bounty report 
-Udemy bug bounty program is provided by [HackerOne.com](https://hackerone.com/udemy). 
+# Dropbox bug bounty report 
+Dropbox bug bounty program is provided by [HackerOne.com](https://hackerone.com/dropbox). 
 
 ## Policy
-If you believe you have found a security vulnerability on the Udemy site, we encourage you to provide additional details right away. We will investigate all legitimate reports and do our best to fix these problems as quickly as possible, given the level of threat involved.
+Keeping user information safe and secure is a top priority and a core company value for us at Dropbox. 
+We welcome the contribution of external security researchers and look forward to awarding them for their invaluable contribution to the security of all Dropbox users.
 
-Udemy’s bounty program is designed to reward those who help us maintain a safe Udemy site for all of our users.
-
-Here’s more information on our bounty program:
-
-- You must provide all the details of the vulnerability up front before we consider possible rewards.
-- The security bug must be original and previously unreported. Known vulnerabilities will not qualify for a reward.
-- Udemy reserves the right to not give a bounty payment if we believe the actions of the reporter have endangered the security of Udemy’s end users.
-- The issue must be resolved by our engineers before the reward is provided.
-- Out of scope reports include the following:
-    - No XSS reports temporarily - we are behind on fixing and analysing them.
-    - Self-XSS, attacks that do not have the possibility of targeting other users.
-    - Exploits that require significant social engineering.
-    - Please do not submit any reports mentioning password reset links or cookie reuse. This is in progress.
-    - SMTP, DMARC, etc. email records settings
-    - Video streaming or downloading videos
-    - All of the following subdomains are NOT in scope:
-        - about, affiliate, blog, business, community, press, teach, learning, research, support, mi, helpdesk - or any additional word press sites not listed.
+To promote the discovery and reporting of vulnerabilities and increase user safety, we ask that you:
+- Share the security issue with us in detail;
+- Please be respectful of our existing applications. 
+- Spamming forms through automated vulnerability scanners will not result in any bounty or award since those are explicitly out of scope;
+- Give us a reasonable time to respond to the issue before making any information about it public;
+- Do not access or modify our data or our users’ data, without explicit permission of the owner. Only interact with your own accounts or test accounts for security research purposes;
+- Contact us immediately if you do inadvertently encounter user data. Do not view, alter, save, store, transfer, or otherwise access the data, and immediately purge any local information upon reporting the vulnerability to Dropbox;
+- Act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of our services (including denial of service); and
+- Otherwise comply with all applicable laws.
 
 ## Scope
-- [Udemy.com](https://www.udemy.com/)
+- [dropbox.com](https://www.dropbox.com/)
 
 ### Vulnerability Types
 * Remote Shell / Command Injection
