@@ -8,7 +8,7 @@ We welcome the contribution of external security researchers and look forward to
 To promote the discovery and reporting of vulnerabilities and increase user safety, we ask that you:
 - Share the security issue with us in detail.
 - Please be respectful of our existing applications. 
-- Spamming forms through automated vulnerability scanners will not result in any bounty or award since those are explicitly out of scope;
+- Spamming forms through automated vulnerability scanners will not result in any bounty or award since those are explicitly out of scope.
 - Give us a reasonable time to respond to the issue before making any information about it public.
 - Do not access or modify our data or our users’ data, without explicit permission of the owner. Only interact with your own accounts or test accounts for security research purposes.
 - Contact us immediately if you do inadvertently encounter user data. Do not view, alter, save, store, transfer, or otherwise access the data, and immediately purge any local information upon reporting the vulnerability to Dropbox.
