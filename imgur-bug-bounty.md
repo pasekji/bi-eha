@@ -243,6 +243,8 @@ Upgrade-Insecure-Requests: 1
 - Now we'll need some payload list of commands that we'll try to inject into the imgur servers system. 
 
 ```bash
+ls
+date
 ls & ping -i 30 127.0.0.1
 date & ping -c 30 127.0.0.1
 date || ping -i 30 127.0.0.1
