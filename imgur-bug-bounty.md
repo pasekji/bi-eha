@@ -227,7 +227,7 @@ generateSessionToken();
 - At first let's intercept the GET request to the imgur search abilitiy in burpsuite.
 - Here we've got the intercepted request of searching string "lol" in the raw format. 
 
-```xml
+```php
 GET /search?q=lol HTTP/1.1
 Host: imgur.com
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0
