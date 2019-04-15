@@ -223,6 +223,24 @@ generateSessionToken();
 ?> 
 ```
 
+### Imgur search bar - Command Injection testing
+- At first let's intercept the GET request to the imgur search abilitiy in burpsuite.
+- Here we've got the intercepted request of searching string "lol" in the raw format. 
+
+```html
+GET /search?q=lol HTTP/1.1
+Host: imgur.com
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: https://imgur.com/search?q=lol
+Cookie: __cfduid=d47c5a597f5aaf36924847b16ac9d9fe51528660130; IMGURSESSION=e51a914f2c5f3eff538c49e92bd5d8b6; frontpagebetav2=1; fp=3651187010094464; m_sort=score; m_window=all; m_section=hot; m_adv_search=%7B%22queries%22%3A%5B%5D%2C%22filters%22%3A%5B%5D%2C%22raw%22%3A%7B%22q_size_is_mpx%22%3A%22off%22%7D%2C%22style%22%3A%22thumbs%22%7D; m_search_query=lol; _nc=1
+Connection: close
+Upgrade-Insecure-Requests: 1
+```
+
+
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
