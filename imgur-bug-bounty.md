@@ -257,6 +257,14 @@ id & sleep 30
 echo $((13 + 8))
 rm -rf / && echo "I am dead..."
 SECRET = "imgur sucks ass"
+doggo & ping -i 30 127.0.0.1
+doggo & ping -c 30 127.0.0.1
+doggo || ping -i 30 127.0.0.1
+doggo; ping -i 30 127.0.0.1
+doggo & `ping 127.0.0.1`
+doggo; echo "need chimken nuggers!"
+doggo & ls 
+doggo;ls
 ```
 
 
