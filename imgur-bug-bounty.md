@@ -1,22 +1,30 @@
-# Dropbox bug bounty report 
-Dropbox bug bounty program is provided by [HackerOne.com](https://hackerone.com/dropbox). 
+# Imgur bug bounty report
+_The most awesome images on the Internet._
+Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/dropbox). 
 
 ## Policy
-Keeping user information safe and secure is a top priority and a core company value for us at Dropbox. 
-We welcome the contribution of external security researchers and look forward to awarding them for their invaluable contribution to the security of all Dropbox users.
-
-To promote the discovery and reporting of vulnerabilities and increase user safety, we ask that you:
-- Share the security issue with us in detail.
-- Please be respectful of our existing applications. 
-- Spamming forms through automated vulnerability scanners will not result in any bounty or award since those are explicitly out of scope.
-- Give us a reasonable time to respond to the issue before making any information about it public.
-- Do not access or modify our data or our users’ data, without explicit permission of the owner. Only interact with your own accounts or test accounts for security research purposes.
-- Contact us immediately if you do inadvertently encounter user data. Do not view, alter, save, store, transfer, or otherwise access the data, and immediately purge any local information upon reporting the vulnerability to Dropbox.
-- Act in good faith to avoid privacy violations, destruction of data, and interruption or degradation of our services (including denial of service). 
-- Otherwise comply with all applicable laws.
+- Do not make any information public until the issue has been resolved.
+- Make a good faith effort to avoid interruption or degradation of our services .
+- Do not access or modify data that does not belong to you - create a free account to test with.
+- Making many substantially similar reports will only be eligible for one bounty award and marked as duplicate. For example, the same vulnerability reported across multiple subdomains. Please consolidate these issues into a single report.
+- Please try to limit the number of times you follow up on a report. Making daily comments only adds to our workload and makes turnaround time longer for everyone.
+- This bounty program is only concerned with security-related bugs, please e-mail support@imgur.com for all other bugs.
 
 ## Scope
-- [Dropbox.com](https://www.dropbox.com/)
+We are interested in hearing about any security flaw. This could include, but is not limited to:
+
+- Anything that leaks personal user data, e.g. emails, passwords, content a user has set to private or deleted.
+- Accessing someone's account without their knowledge.
+- Bug exposing a way to preform an action on behalf of another user.
+- Changing a user's settings without their knowledge.
+- Changing values of any site wide data.
+- Programmatically deleting images that don't belong to you.
+- Cross-site scripting.
+
+### Domains under Scope
+- imgur.com
+- api.imgur.com
+- i.imgur.com
 
 ### Vulnerability Types
 * Remote Shell / Command Injection
