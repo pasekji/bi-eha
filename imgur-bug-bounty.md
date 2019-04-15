@@ -224,6 +224,7 @@ generateSessionToken();
 ```
 
 ### Imgur search bar - Command Injection testing
+- In this test, we'll use our list of test commands and burpsuite tool.
 - At first let's intercept the GET request to the imgur search abilitiy in burpsuite.
 - Here we've got the intercepted request of searching string "lol" in the raw format. 
 
@@ -272,6 +273,8 @@ doggo
 ```
 
 - There are several command, such **sleep 10**, which need some time to respod. Therefore even if it seemed we were not successful and we did not get any reasonable reponse, we can still consider that the command was successfuly injected, if a significant delay in response occured.
+- After checking the responses, there wasn't any sign of possibility of command injection vulnerability via the image search bar. No significat delays also weren't the case.
+- Image search application is durable to the classic command injection technique.
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
