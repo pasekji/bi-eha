@@ -271,6 +271,7 @@ doggo; sleep 10
 doggo
 ```
 
+- There are several command, such **sleep 10**, which need some time to respod. Therefore even if it seemed we were not successful and we did not get any reasonable reponse, we can still consider that the command was successfuly injected, if a significant delay in response occured.
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
