@@ -1,7 +1,7 @@
 # Imgur bug bounty report
 _"The most awesome images on the Internet."_
 
-Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/dropbox). 
+Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/imgur). 
 
 ## Policy
 - Do not make any information public until the issue has been resolved.
