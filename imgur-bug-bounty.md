@@ -244,7 +244,7 @@ Upgrade-Insecure-Requests: 1
 
 ```bash
 ls & ping -i 30 127.0.0.1
-date & ping -n 30 127.0.0.1
+date & ping -c 30 127.0.0.1
 date || ping -i 30 127.0.0.1
 echo "Harold..."; ping -i 30 127.0.0.1
 pwd & `ping 127.0.0.1`
