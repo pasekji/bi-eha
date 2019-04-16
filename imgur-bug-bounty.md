@@ -42,7 +42,7 @@ We are interested in hearing about any security flaw. This could include, but is
 ## 1. Information Gathering
 - We need to gather some information about our target before the testing process. 
 - There're two useful tools which we'll use for information gathering - Maltego and Nexpose.
-- [Maltego PDF export] (https://docdro.id/L4E7PyY)
+- [Maltego PDF export](https://docdro.id/L4E7PyY)
 
 ## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
