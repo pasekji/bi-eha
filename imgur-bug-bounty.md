@@ -39,7 +39,12 @@ We are interested in hearing about any security flaw. This could include, but is
 * Stored Cross Site Scripting
 * Other Cross Site Scripting
 
-## 1. Remote Shell / Command Injection
+## 1. Information Gathering
+- We need to gather some information about our target before the testing process. 
+- There're two useful tools which we'll use for information gathering - Maltego and Nexpose.
+- [Maltego PDF export] (https://docdro.id/L4E7PyY)
+
+## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
 Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. 
 In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. 
