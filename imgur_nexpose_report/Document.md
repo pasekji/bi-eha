@@ -3,11 +3,6 @@
 </HEAD>
 <BODY>
 <H1 CLASS="coverPage"></H1>
-<DIV CLASS="coverPage">
-<P CLASS="coverPageTitle">Audit Report</P>
-<P CLASS="coverPageReportName">imgur</P>
-<P CLASS="coverPageScanDate">Audited on April 17, 2019</P>
-<P CLASS="coverPageReportDate">Reported on April 18, 2019</P></DIV>
 <H1 CLASS="execSummaryTitle"><A NAME="ExecutiveSummary"><SPAN CLASS="SectionNumber1">1</SPAN> Executive Summary</A></H1>
 <DIV CLASS="execSummaryTitle">
 <P>This report represents a security audit performed by Nexpose from Rapid7 LLC. It contains confidential information about the state of your network. Access to this information by unauthorized personnel may allow them to compromise your network.</P>
