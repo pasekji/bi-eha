@@ -44,6 +44,10 @@ We are interested in hearing about any security flaw. This could include, but is
 - There're two useful tools which we'll use for information gathering - Maltego and Nexpose.
 - [Maltego PDF export](https://docdro.id/L4E7PyY)
 - [Nexpose audit export](imgur_nexpose_report/Document.md)
+- We can see that the imgur security level is quite advanced and probably only experts in ethical hacking could break the invisible vulnerabilies to us.
+- Nexpose found some XSS vulneraibilies and we will test them. 
+- Nexpose did not found anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselvs.
+ 
 
 ## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
