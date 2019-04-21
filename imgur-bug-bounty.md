@@ -45,9 +45,11 @@ We are interested in hearing about any security flaw. This could include, but is
 - [Maltego PDF export](https://docdro.id/L4E7PyY)
 - [Nexpose audit export](imgur_nexpose_report/Document.md)
 - We can see that the imgur security level is quite advanced and probably only experts in ethical hacking could break the more advanced vulnerabilities.
-- Nexpose found some XSS vulneraibilies and we will test them. 
+- No critical issues occured, all the issues were only at the severe level. 
+- Nexpose found some XSS vulneraibilies and we will examine and test them.[XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
+- There is also autocomplte enabled for sensitive HTML formats, that could be also some harful issue. [Autocomplete HTML forms](imgur_nexpose_report/Document.md#326-autocomplete-enabled-for-sensitive-html-form-fields-spider-sensitive-form-data-autocomplete-enabled )
+- The rest contained only some TLS/SSL and Cookie haeders, that are not required in the bug bounty program socope, but we could still examine them in the spare time.  
 - Nexpose did not found anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselvs.
--  
 
 ## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
