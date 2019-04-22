@@ -311,7 +311,7 @@ system($cmd);
 ?>
 ```
 
-- We will try to either spoofing the file extensions or injecting the the code to this image. 
+- We will try either spoofing the file extensions or injecting the the code to this image. 
 ![Sneaky Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
 
 ### References
