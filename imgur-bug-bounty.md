@@ -314,7 +314,7 @@ system($cmd);
 - We will try either spoofing the file extensions or injecting the the code to this image. 
 ![Sneaky Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
 - First let's try to upload a php script file. 
-![PHP script file](https://imgur.com/otwpqzK)
+![PHP script file](https://i.imgur.com/otwpqzK.png)
 
 
 ### References
