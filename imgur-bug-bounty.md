@@ -296,10 +296,10 @@ doggo
 #### Simple PHP test script
 ```php
 <?php  
-$x=15;  
-$y=30;  
-$z=$x+$y;  
-echo "Sum: ",$z;  
+$x = 15;  
+$y = 30;  
+$z = $x + $y;  
+echo "Sum: ",$z;
 ?>
 ```
 
@@ -315,6 +315,10 @@ system($cmd);
 ![Sneaky Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
 - First let's try to upload a php script file. 
 ![PHP script file](https://i.imgur.com/otwpqzK.png)
+- The image upload form don't accept this file, simple change of extension isn't enough, let's try injecting the code to the legit image file.
+- We're going to use the exiftool in kali linux. 
+![exiftool code injection](https://i.imgur.com/myLL4vk.png)
+
 
 
 ### References
