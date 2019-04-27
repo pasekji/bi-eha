@@ -318,7 +318,8 @@ system($cmd);
 - The image upload form don't accept this file, simple change of extension isn't enough, let's try injecting the code to the legit image file.
 - We're going to use the exiftool in kali linux. 
 ![exiftool code injection](https://i.imgur.com/myLL4vk.png)
-
+- Now we have a php executable code hidden in image file.
+![php code execution](https://i.imgur.com/0DYKEtB.png)
 
 
 ### References
