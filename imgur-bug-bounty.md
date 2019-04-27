@@ -324,7 +324,7 @@ system($cmd);
 - But is there a was to run the injected code on the remote server?
 - After some ttrying and researching we were not successful in executing the onjected code on the remote server, the case is probably server absence or restricnions to php.
 - The backdoor shell script injection was also inconculsive due to same reasons. 
-- **Image upload form is somehow durable to the uintended image formats.**
+- **Image upload form is somehow durable to the uintended image formats. because the could've been more into depth analysis for the potentional harm of file uploaded.**
 - **Imgur is durable to php remote code executions via uploaded images.**
 
 
