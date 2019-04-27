@@ -320,6 +320,10 @@ system($cmd);
 ![exiftool code injection](https://i.imgur.com/myLL4vk.png)
 - Now we have a php executable code hidden in image file.
 ![php code execution](https://i.imgur.com/0DYKEtB.png)
+- Now the image pass the upload, here is it's url. 
+[php injected image](https://i.imgur.com/S1kDI8Y.jpg)
+- But is there a was to run the injected code on the remote server?
+- 
 
 
 ### References
