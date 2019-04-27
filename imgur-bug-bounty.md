@@ -322,7 +322,10 @@ system($cmd);
 ![php code execution](https://i.imgur.com/0DYKEtB.png)
 - Now the image pass the upload, here is it's url - [php injected image](https://i.imgur.com/S1kDI8Y.jpg)
 - But is there a was to run the injected code on the remote server?
-- 
+- After some ttrying and researching we were not successful in executing the onjected code on the remote server, the case is probably server absence or restricnions to php.
+- The backdoor shell script injection was also inconculsive due to same reasons. 
+- **Image upload form is somehow durable to the uintended image formats.**
+- **Imgur is durable to php remote code executions via uploaded images.**
 
 
 ### References
