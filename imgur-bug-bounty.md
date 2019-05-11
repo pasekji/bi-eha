@@ -327,7 +327,36 @@ system($cmd);
 - **Image upload form is somehow durable to the uintended image formats. because the could've been more into depth analysis for the potentional harm of file uploaded.**
 - **Imgur is durable to php remote code executions via uploaded images.**
 
+## 4. SQL injection
+- SQL Injection (SQLi) is a type of an injection attack that makes it possible to execute malicious SQL statements. 
+- These statements control a database server behind a web application. 
+- Attackers can use SQL Injection vulnerabilities to bypass application security measures. 
+- They can go around authentication and authorization of a web page or web application and retrieve the content of the entire SQL database. 
+- They can also use SQL Injection to add, modify, and delete records in the database.
+
+#### How to prevent SQLi? 
+- The only sure way to prevent SQL Injection attacks is input validation and parametrized queries including prepared statements. 
+- The application code should never use the input directly. 
+- The developer must sanitize all input, not only web form inputs such as login forms. 
+- They must remove potential malicious code elements such as single quotes. 
+- It is also a good idea to turn off the visibility of database errors on your production sites. 
+- Database errors can be used with SQL Injection to gain information about your database.
+- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL querries directly to the text forms.
+
+#### Exploitation - SQLmap tool
+- SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
+- Works with many database types, mysql, mssql, etc...
+
+- We'll start by using this tool to get the information about injectability of the imgur service.
+- Lets use the imgur search bar for this task once again.
+- This command uses the most advanced level of testing because of the --risk and --level options.
+
+```bash
+sqlmap -u --risk=3 --level=3 "https://imgur.com/search/score?q=otter"
+```
+
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
+- https://www.acunetix.com/websitesecurity/sql-injection/
