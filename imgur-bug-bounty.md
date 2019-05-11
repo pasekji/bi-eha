@@ -346,7 +346,6 @@ system($cmd);
 #### Exploitation - SQLmap tool
 - SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
 - Works with many database types, mysql, mssql, etc...
-
 - We'll start by using this tool to get the information about injectability of the imgur service.
 - Lets use the imgur search bar for this task once again.
 - This command uses the most advanced level of testing because of the --risk and --level options.
