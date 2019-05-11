@@ -341,7 +341,7 @@ system($cmd);
 - They must remove potential malicious code elements such as single quotes. 
 - It is also a good idea to turn off the visibility of database errors on your production sites. 
 - Database errors can be used with SQL Injection to gain information about your database.
-- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL querries directly to the text forms.
+- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL querries directly through the text forms.
 
 #### Exploitation - SQLmap tool
 - SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
