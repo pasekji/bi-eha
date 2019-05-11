@@ -352,7 +352,7 @@ system($cmd);
 - This command uses the most advanced level of testing because of the --risk and --level options.
 
 ```bash
-sqlmap -u --risk=3 --level=3 "https://imgur.com/search?q=otter"
+sqlmap -u --risk=3 --level=5 "https://imgur.com/search?q=otter"
 ```
 
 
