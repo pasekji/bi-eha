@@ -479,6 +479,9 @@ it is not recommended to perform extended UNION tests if there is not at least o
 [*] shutting down at 00:54:49
 ```
 
+- Other forms and appliacations at imgur are not suitable for SQLmap tests, because they're not using url querries or there are some additional securities like reCAPTCHA.
+![imgur login form reCAPTCHA](https://i.imgur.com/DrF4k0j.png)
+
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
