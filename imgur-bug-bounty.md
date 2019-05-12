@@ -628,8 +628,27 @@ x' OR 1=1 OR 'x'='y
 - Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform, and to access any of the user's data. 
 - If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.
 
+### Reflected cross-site scripting
+- Reflected XSS is the simplest variety of cross-site scripting. 
+- It arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.
+
+- Here is a simple example of a reflected XSS vulnerability:
+```html
+https://insecure-website.com/status?message=All+is+well.
+
+<p>Status: All is well.</p>
+```
+- The application doesn't perform any other processing of the data, so an attacker can easily construct an attack like this:
+```html
+https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</script>
+
+<p>Status: <script>/* Bad stuff here... */</script></p>
+```
+- If the user visits the URL constructed by the attacker, then the attacker's script executes in the user's browser, in the context of that user's session with the application. 
+- At that point, the script can carry out any action, and retrieve any data, to which the user has access.
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
 - [3] Acunetix. Acunetix [online]. Acunetix: Acunetix, 2018 [quoted. 2019-05-12]. Availiable from: https://www.acunetix.com/websitesecurity/sql-injection/
 - [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Availiable from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
+- [5] https://portswigger.net/web-security/cross-site-scripting
