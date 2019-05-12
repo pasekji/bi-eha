@@ -485,8 +485,8 @@ it is not recommended to perform extended UNION tests if there is not at least o
 #### Exploitation - Burpsuite & SQLi
 - Burpsuite can be also used to test SQLi vulnerability. 
 - Because the imgur search bar did not seem injectable, we'll test the imgur login page for SQLi.
-
 - SQLi list of payloads tested
+
 ```sql
 '
 "
