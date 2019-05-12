@@ -631,7 +631,6 @@ x' OR 1=1 OR 'x'='y
 ### Reflected cross-site scripting
 - Reflected XSS is the simplest variety of cross-site scripting. 
 - It arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.
-
 - Here is a simple example of a reflected XSS vulnerability:
 ```html
 https://insecure-website.com/status?message=All+is+well.
