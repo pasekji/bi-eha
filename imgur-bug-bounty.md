@@ -324,7 +324,7 @@ system($cmd);
 - But is there a was to run the injected code on the remote server?
 - After some ttrying and researching we were not successful in executing the onjected code on the remote server, the case is probably server absence or restricnions to php.
 - The backdoor shell script injection was also inconculsive due to same reasons. 
-- **Image upload form is somehow durable to the uintended image formats. because the could've been more into depth analysis for the potentional harm of file uploaded.**
+- **Image upload form is somehow durable to the uintended image formats because there could've been more into depth analysis for the potentional harm of file uploaded.**
 - **Imgur is durable to php remote code executions via uploaded images.**
 
 ## 4. SQL injection
@@ -614,6 +614,14 @@ x' OR 1=1 OR 'x'='y
 //*
 */*
 ```
+- The automated payload proccess seems not vulnerable, because of the reCAPTCHA mechanism, which is a lot harder to break.
+- Here is the example of payload render output.
+![SQLi payload render output](https://i.imgur.com/hFnBA29.png)
+- When the automated proccess is not possible, lets try to test some SQLi querries manually.
+- There is no sign of SQLi injectability after testing each and every querry from above manully.
+![SQLi manual testing](https://i.imgur.com/4Xn0h9s.png)
+- **Imgur is durable to SQLi via search function and sign in/register forms**
+
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
