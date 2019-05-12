@@ -616,10 +616,10 @@ x' OR 1=1 OR 'x'='y
 ```
 - The automated payload proccess seems not vulnerable, because of the reCAPTCHA mechanism, which is a lot harder to break.
 - Here is the example of payload render output.
-![SQLi payload render output](https://i.imgur.com/hFnBA29.png)
+![SQLi payload render output](https://i.imgur.com/zFon9yT.png)
 - When the automated proccess is not possible, lets try to test some SQLi querries manually.
 - There is no sign of SQLi injectability after testing each and every querry from above manully.
-![SQLi manual testing](https://i.imgur.com/zFon9yT.png)
+![SQLi manual testing](https://i.imgur.com/4Xn0h9s.png)
 - **Imgur is durable to SQLi via search function and login/register forms**
 
 
