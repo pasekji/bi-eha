@@ -480,7 +480,7 @@ it is not recommended to perform extended UNION tests if there is not at least o
 ```
 
 - Other forms and appliacations at imgur are not suitable for SQLmap tests, because they're not using url querries or there are some additional securities like reCAPTCHA.
-![imgur login form reCAPTCHA](https://i.imgur.com/DrF4k0j.png)
+![imgur login form reCAPTCHA](https://i.imgur.com/RG6yDNU.png)
 
 #### Exploitation - Burpsuite & SQLi
 - Burpsuite can be also used to test SQLi vulnerability. 
