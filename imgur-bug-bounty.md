@@ -626,4 +626,5 @@ x' OR 1=1 OR 'x'='y
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
-- https://www.acunetix.com/websitesecurity/sql-injection/
+- [3] Acunetix. Acunetix [online]. Acunetix: Acunetix, 2018 [quoted. 2019-05-12]. Availiable from: https://www.acunetix.com/websitesecurity/sql-injection/
+- [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Availiable from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
