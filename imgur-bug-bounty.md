@@ -622,6 +622,11 @@ x' OR 1=1 OR 'x'='y
 ![SQLi manual testing](https://i.imgur.com/4Xn0h9s.png)
 - **Imgur is durable to SQLi via search function and login/register forms.**
 
+## 5. Cross Site Scripting
+- Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. 
+- It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. 
+- Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform, and to access any of the user's data. 
+- If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
