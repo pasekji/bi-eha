@@ -646,6 +646,17 @@ https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</scr
 - If the user visits the URL constructed by the attacker, then the attacker's script executes in the user's browser, in the context of that user's session with the application. 
 - At that point, the script can carry out any action, and retrieve any data, to which the user has access.
 
+### Stored coross-site scripting
+- Stored XSS (also known as persistent or second-order XSS) arises when an application receives data from an untrusted source and includes that data within its later HTTP responses in an unsafe way.
+- The data in question might be submitted to the application via HTTP requests; for example, comments on a blog post, user nicknames in a chat room, or contact details on a customer order. In other cases, the data might arrive from other untrusted sources; for example, a webmail application displaying messages received over SMTP, a marketing application displaying social media posts, or a network monitoring application displaying packet data from network traffic.
+- Here is a simple example of a stored XSS vulnerability. A message board application lets users submit messages, which are displayed to other users:
+```html
+<p>Hello, this is my message!</p>
+```
+- The application doesn't perform any other processing of the data, so an attacker can easily send a message that attacks other users:
+```html
+<p><script>/* Bad stuff here... */</script></p>
+```
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
