@@ -820,7 +820,7 @@ password1
 - These CAPTCHA mechanisms are very hard to break.
 - Hacker than can not recognise any valid combination, because even with the correct credentials we need to confirm the CAPTCHA to login.
 - This is a big adventage, not every web application has this security mechanism.
-- **The sign in form is durable to automated bruteforce tools mechanisms.**
+- **The sign in form is durable to automated bruteforce tools techniques.**
 
 ## Conclusion
 
