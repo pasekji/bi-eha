@@ -725,6 +725,63 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 - After analyzing responses we have not discovered any proof of true xss vulnerablity while searching for all of tree xss types from above.
 - **Imgurs advanced search functions seems durable to the XSS.**
 
+## 6. User security / Authentication bypass
+- In this section we'll slightly focus at the individual user security. 
+- We've tried some lighter bruteforcing attack at the login page using once again burpsuite payloads.
+- There could be many possible combination of most used passwords and common usernames.
+- Let's just test the login process security using only few credentials. 
+- First two usernames are invalid, the third one is valid.
+- Same with the passwords.
+```html
+Usernames:
+
+DuffelKerfuffle
+HenryOfSkalitz
+ehatest
+
+Passwords:
+imhungry54
+strongpassword123
+password1
+```
+- The only valid comination of username and password for login is 'ehatest' and 'password1'.
+- Lets see if we log in when using automated tool even if we get the right combination of username and password.
+- Thats how the signin form looks like. 
+ <form id="signin-form" method="post" action="">
+```html
+        <div class="signin-imgur core-dark core-shadow br5">
+            
+
+            <input
+                title=""
+                type="text"
+                tabindex="5"
+                name="username"
+                maxlength="255"
+                id="username"
+                class="br5 lvl1-dark"
+                placeholder="Username or Email"
+                
+            />
+
+            <p class="password">
+                <input
+                    title=""
+                    type="password"
+                    tabindex="6"
+                    name="password"
+                    maxlength="255"
+                    id="password"
+                    class="br5 last lvl1-dark"
+                    placeholder="Password"
+                />
+
+                <a class="forgot-password text-center" title="forgot password" href="//imgur.com/signin/forgotpassword">forgot?</a>
+            </p>
+
+            <input type="hidden" name="remember" value="remember">
+```
+
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
 - [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
