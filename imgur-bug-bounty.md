@@ -747,9 +747,8 @@ password1
 - The only valid comination of username and password for login is 'ehatest' and 'password1'.
 - Lets see if we log in when using automated tool even if we get the right combination of username and password.
 - Thats how the signin form looks like. 
- <form id="signin-form" method="post" action="">
-
 ```html
+ <form id="signin-form" method="post" action="">
         <div class="signin-imgur core-dark core-shadow br5">
             
 
@@ -818,6 +817,13 @@ password1
               <div class="g-recaptcha" data-sitekey="6LdZsh4TAAAAAGnDJx9KXxURWygq8exADiSHLP-M" data-theme="dark"></div>
             </div>
 ```
+- These CAPTCHA mechanisms are very hard to break.
+- Hacker than can not recognise any valid combination, because even with the correct credentials we need to confirm the CAPTCHA to login.
+- This is a big adventage, not every web application has this security mechanism.
+- **The sign in form is durable to automated bruteforce tools mechanisms.**
+
+## Conclusion
+
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
