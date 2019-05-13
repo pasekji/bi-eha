@@ -823,12 +823,22 @@ password1
 - **The sign in form is durable to automated bruteforce tools techniques.**
 
 ## Conclusion
+Now it is the time to summarize the informations gathered and tested.
+- **Image search application is durable to the command injection technique.**
+- **Image upload form is somehow durable to the uintended image formats because there could've been more into depth analysis for the potentional harm of file uploaded.**
+- **Imgur is durable to php remote code executions via uploaded images.**
+- **Imgur is durable to SQLi via search function and login/register forms.**
+- **Imgurs advanced search functions seems durable to the XSS.**
+- **The sign in form is durable to automated bruteforce tools techniques.**
+- Other segments were not suspicous in for vulenerability at the time of information gathering, therfore were not tested.
 
+*We've learned a lot about ethical hackings and bug bounty programs during this work. It was an ebojoyable time.*
+*- Jiří Pašek, Patrik Martinec*
 
 ### References
-- [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
-- [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Availiable from: http://www.dvwa.co.uk/
-- [3] Acunetix. Acunetix [online]. Acunetix: Acunetix, 2018 [quoted. 2019-05-12]. Availiable from: https://www.acunetix.com/websitesecurity/sql-injection/
-- [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Availiable from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
-- [5] https://portswigger.net/web-security/cross-site-scripting
+- [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Available from: https://www.owasp.org/index.php/Command_Injection
+- [2] DVWA - Damn Vulnerable Web Application [online]. UK: DVWA, 2019 [quoted. 2019-04-13]. Available from: http://www.dvwa.co.uk/
+- [3] Acunetix. Acunetix [online]. Acunetix: Acunetix, 2018 [quoted. 2019-05-12]. Available from: https://www.acunetix.com/websitesecurity/sql-injection/
+- [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Available from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
+- [5] Portswigger. Portswigger - Cross site scripting [online]. Portswigger: Portswigger, 2018 [quoted. 2019-05-13]. Available from: https://portswigger.net/web-security/cross-site-scripting
 - https://github.com/ismailtasdelen/xss-payload-list
