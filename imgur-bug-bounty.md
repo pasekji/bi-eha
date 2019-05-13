@@ -782,6 +782,42 @@ password1
 
             <input type="hidden" name="remember" value="remember">
 ```
+- when using some suspicous automated proccess for signing in, attackers intensios get disturbed by the reCAPTCHA mechanism
+- we can see the change at codes from above and below
+```html
+<form id="signin-form" method="post" action="">
+          <div class="signin-imgur core-dark core-shadow br5 captcha">
+            <p class="error">Please fill out a captcha.</p>
+            <input
+            title=""
+            type="text"
+            tabindex="5"
+            name="username"
+            maxlength="255"
+            id="username"
+            class="br5 lvl1-dark"
+            placeholder="Username or Email"
+            value="user"
+            />
+            <p class="password">
+              <input
+              title=""
+              type="password"
+              tabindex="6"
+              name="password"
+              maxlength="255"
+              id="password"
+              class="br5 last lvl1-dark"
+              placeholder="Password"
+              />
+              <a class="forgot-password text-center" title="forgot password" href="//imgur.com/signin/forgotpassword">forgot?</a>
+            </p>
+            <input type="hidden" name="remember" value="remember">
+            <div class="captcha">
+              <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+              <div class="g-recaptcha" data-sitekey="6LdZsh4TAAAAAGnDJx9KXxURWygq8exADiSHLP-M" data-theme="dark"></div>
+            </div>
+```
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
