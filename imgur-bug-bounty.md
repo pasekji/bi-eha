@@ -5,7 +5,7 @@ Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/im
 
 ## Policy
 - Do not make any information public until the issue has been resolved.
-- Make a good faith effort to avoid interruption or degradation of our services .
+- Make a good faith effort to avoid interruption or degradation of our services.
 - Do not access or modify data that does not belong to you - create a free account to test with.
 - Making many substantially similar reports will only be eligible for one bounty award and marked as duplicate. For example, the same vulnerability reported across multiple subdomains. Please consolidate these issues into a single report.
 - Please try to limit the number of times you follow up on a report. Making daily comments only adds to our workload and makes turnaround time longer for everyone.
@@ -16,9 +16,9 @@ We are interested in hearing about any security flaw. This could include, but is
 
 - Anything that leaks personal user data, e.g. emails, passwords, content a user has set to private or deleted.
 - Accessing someone's account without their knowledge.
-- Bug exposing a way to preform an action on behalf of another user.
+- Bug exposing a way to perform an action on behalf of another user.
 - Changing a user's settings without their knowledge.
-- Changing values of any site wide data.
+- Changing values of any site-wide data.
 - Programmatically deleting images that don't belong to you.
 - Cross-site scripting.
 
@@ -32,12 +32,12 @@ We are interested in hearing about any security flaw. This could include, but is
 * Remote Code Execution
 * SQL Injection (with output)
 * Significant Authentication Bypass
-* Local file Inclusion
+* Local File Inclusion
 * SQL Injection (blind)
 * Insecure Direct Object References
 * Server Side Request Forgery
-* Stored Cross Site Scripting
-* Other Cross Site Scripting
+* Stored Cross-Site Scripting
+* Other Cross-Site Scripting
 
 ## 1. Information Gathering
 - We need to gather some information about our target before the testing process. 
@@ -45,34 +45,34 @@ We are interested in hearing about any security flaw. This could include, but is
 - [Maltego PDF export](https://docdro.id/L4E7PyY)
 - [Nexpose audit export](imgur_nexpose_report/Document.md)
 - We can see that the imgur security level is quite advanced and probably only experts in ethical hacking could break the more advanced vulnerabilities.
-- No critical issues occured, all the issues were only at the severe level. 
-- Nexpose found some XSS vulneraibilies and we will examine and test them.[XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
-- There is also autocomplte enabled for sensitive HTML formats, that could be also some harful issue. [Autocomplete HTML forms](imgur_nexpose_report/Document.md#326-autocomplete-enabled-for-sensitive-html-form-fields-spider-sensitive-form-data-autocomplete-enabled )
-- The rest contained only some TLS/SSL and Cookie haeders, that are not required in the bug bounty program socope, but we could still examine them in the spare time.  
-- Nexpose did not found anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselvs.
+- No critical issues occurred, all the issues were only at a severe level. 
+- Nexpose found some XSS vulnerabilities and we will examine and test them.[XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
+- There is also autocomplete enabled for sensitive HTML formats, that could be also some harmful issue. [Autocomplete HTML forms](imgur_nexpose_report/Document.md#326-autocomplete-enabled-for-sensitive-html-form-fields-spider-sensitive-form-data-autocomplete-enabled )
+- The rest contained only some TLS/SSL and Cookie headers, that are not required in the bug bounty program scope, but we could still examine them in the spare time.  
+- Nexpose did not find anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselves.
 
 ## 2. Remote Shell / Command Injection
-Command injection is an attack in which the goal is execution of arbitrary commands on the host operating system via a vulnerable application. 
-Command injection attacks are possible when an application passes unsafe user supplied data (forms, cookies, HTTP headers etc.) to a system shell. 
+Command injection is an attack in which the goal is an execution of arbitrary commands on the host operating system via a vulnerable application. 
+Command injection attacks are possible when an application passes unsafe user-supplied data (forms, cookies, HTTP headers, etc.) to a system shell. 
 In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. 
 Command injection attacks are possible largely due to insufficient input validation.
 
 This attack differs from Code Injection, in that code injection allows the attacker to add his own code that is then executed by the application. 
-In Command Injection, the attacker extends the default functionality of the application, which execute system commands, without the necessity of injecting code. [1]
+In Command Injection, the attacker extends the default functionality of the application, which executes system commands, without the necessity of injecting code. [1]
 
 ### Command Injection descriptive explanation
 _"Damn Vulnerable Web App (DVWA) is a PHP/MySQL web application that is damn vulnerable. 
 Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, 
-help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment."_ [2]
+help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a classroom environment."_ [2]
 
 The purpose of the command injection attack is to inject and execute commands specified by the attacker in the vulnerable application. 
-In situation like this, the application, which executes unwanted system commands, is like a pseudo system shell, and the attacker may use it as any authorized system user. 
+In a situation like this, the application, which executes unwanted system commands, is like a pseudo system shell, and the attacker may use it as any authorized system user. 
 However, commands are executed with the same privileges and environment as the web service has.
-Command injection attacks are possible in most cases because of lack of correct input data validation, which can be manipulated by the attacker (forms, cookies, HTTP headers etc.).
+Command injection attacks are possible in most cases because of a lack of correct input data validation, which can be manipulated by the attacker (forms, cookies, HTTP headers, etc.).
 The syntax and commands may differ between the Operating Systems (OS), such as Linux and Windows, depending on their desired actions.
 This attack may also be called "Remote Command Execution (RCE)".
 
-#### Low level security Command Injection
+#### Low-level security Command Injection
 This allows for direct input into one of many PHP functions that will execute commands on the OS. 
 It is possible to escape out of the designed command and executed unintentional actions.
 This can be done by adding on to the request, "once the command has executed successfully, run this command". 
@@ -102,8 +102,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 ?> 
 ```
 
-#### Medium level security Command Injection
-The developer has read up on some of the issues with command injection, and placed in various pattern patching to filter the input. However, this isn't enough.
+#### Medium-level security Command Injection
+The developer has read up on some of the issues with command injection and placed in various pattern matching to filter the input. However, this isn't enough.
 Various other system syntaxes can be used to break out of the desired command.
 
 ##### Medium level security Command Injection vulnerable application
@@ -140,8 +140,8 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 ?> 
 ```
 
-#### High level security Command Injection 
-In the high level, the developer goes back to the drawing board and puts in even more pattern to match. But even this isn't enough.
+#### High-level security Command Injection 
+In the high level, the developer goes back to the drawing board and puts in even more patterns to match. But even this isn't enough.
 The developer has either made a slight typo with the filters and believes a certain PHP command will save them from this mistake.
 
 ##### High level security Command Injection vulnerable application
@@ -186,9 +186,9 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 ```
 
 #### Impossible level security Command Injection
-In the impossible level, the challenge has been re-written, only to allow a very stricted input. 
+In the impossible level, the challenge has been re-written, only to allow a very restricted input. 
 If this doesn't match and doesn't produce a certain result, it will not be allowed to execute. 
-Rather than "black listing" filtering (allowing any input and removing unwanted), this uses "white listing" (only allow certain values).
+Rather than "blacklisting" filtering (allowing any input and removing unwanted), this uses "whitelisting" (only allow certain values).
 
 ##### Impossible level security Command Injection vulnerable application
 ```php
@@ -236,8 +236,8 @@ generateSessionToken();
 ```
 
 ### Imgur search bar - Command Injection testing
-- In this test, we'll use our list of test commands and burpsuite tool.
-- At first let's intercept the GET request to the imgur search abilitiy in burpsuite.
+- In this test, we'll use our list of test commands and the burpsuite tool.
+- At first, let's intercept the GET request to the imgur search ability in burpsuite.
 - Here we've got the intercepted request of searching string "lol" in the raw format. 
 
 ```xml
@@ -284,13 +284,13 @@ doggo; sleep 10
 doggo
 ```
 
-- There are several command, such **sleep 10**, which need some time to respod. Therefore even if it seemed we were not successful and we did not get any reasonable reponse, we can still consider that the command was successfuly injected, if a significant delay in response occured.
-- After checking the responses, there wasn't any sign of possibility of command injection vulnerability via the image search bar. No significat delays also weren't the case.
+- There are several commands, such as **sleep 10**, which need some time to respond. Therefore even if it seemed we were not successful and we did not get any reasonable response, we can still consider that the command was successfully injected, if a significant delay in response occurred.
+- After checking the responses, there wasn't any sign of the possibility of command injection vulnerability via the image search bar. No significant delays also weren't the case.
 - **Image search application is durable to the command injection technique.**
 
 ## 3. Remote Code Execution
-- Remote Code Execution attack is slightly diffrent to the simple Command Injection expolitation. 
-- It can be viewed as execution of some potentionally harmful binnary file at the target remote server.
+- Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
+- It can be viewed as the execution of some potentially harmful binary file at the target remote server.
 - We will try to exploit the RCE via image upload function by uploading the exploitable PHP or JS script with spoofed extension.
 
 #### Simple PHP test script
@@ -311,24 +311,24 @@ system($cmd);
 ?>
 ```
 
-- We will try either spoofing the file extensions or injecting the the code to this image. 
+- We will try either spoofing the file extensions or injecting the code to this image. 
 ![Smug Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
-- First let's try to upload a php script file. 
+- First, let's try to upload a PHP script file. 
 ![PHP script file](https://i.imgur.com/otwpqzK.png)
-- The image upload form don't accept this file, simple change of extension isn't enough, let's try injecting the code to the legit image file.
+- The image upload form doesn't accept this file, simple change of extension isn't enough, let's try injecting the code to the legit image file.
 - We're going to use the exiftool in kali linux. 
 ![exiftool code injection](https://i.imgur.com/myLL4vk.png)
-- Now we have a php executable code hidden in image file.
+- Now we have a PHP executable code hidden in the image file.
 ![php code execution](https://i.imgur.com/0DYKEtB.png)
-- Now the image pass the upload, here is it's url - [php injected image](https://i.imgur.com/S1kDI8Y.jpg)
-- But is there a was to run the injected code on the remote server?
-- After some ttrying and researching we were not successful in executing the onjected code on the remote server, the case is probably server absence or restricnions to php.
-- The backdoor shell script injection was also inconculsive due to same reasons. 
-- **Image upload form is somehow durable to the uintended image formats because there could've been more into depth analysis for the potentional harm of file uploaded.**
-- **Imgur is durable to php remote code executions via uploaded images.**
+- Now the image pass the upload, here is it's URL - [php injected image](https://i.imgur.com/S1kDI8Y.jpg)
+- But is there a way to run the injected code on the remote server?
+- After some trying and researching we were not successful in executing the injected code on the remote server, the case is probably server absence or restrictions to php.
+- The backdoor shell script injection was also inconclusive due to the same reasons. 
+- **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
+- **Imgur is durable to PHP remote code executions via uploaded images.**
 
 ## 4. SQL injection
-- SQL Injection (SQLi) is a type of an injection attack that makes it possible to execute malicious SQL statements. 
+- SQL Injection (SQLi) is a type of injection attack that makes it possible to execute malicious SQL statements. 
 - These statements control a database server behind a web application. 
 - Attackers can use SQL Injection vulnerabilities to bypass application security measures. 
 - They can go around authentication and authorization of a web page or web application and retrieve the content of the entire SQL database. 
@@ -341,20 +341,20 @@ system($cmd);
 - They must remove potential malicious code elements such as single quotes. 
 - It is also a good idea to turn off the visibility of database errors on your production sites. 
 - Database errors can be used with SQL Injection to gain information about your database.
-- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL querries directly through the text forms.
+- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL queries directly through the text forms.
 
 #### Exploitation - SQLmap tool
 - SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
-- Works with many database types, mysql, mssql, etc...
-- We'll start by using this tool to get the information about injectability of the imgur service.
-- Lets use the imgur search bar for this task once again.
+- Works with many database types, MySQL, mssql, etc...
+- We'll start by using this tool to get the information about the injectability of the imgur service.
+- Let's use the imgur search bar for this task once again.
 - This command uses the most advanced level of testing because of the --risk and --level options.
 
 ```bash
 sqlmap --risk=3 --level=5 -u "https://imgur.com/search?q=otter"
 ```
 
-- Command line export of SQLmap proccess 
+- Command line export of SQLmap process 
 
 ```bash
 root@kali:~# sqlmap --risk=3 --level=5 -u "https://imgur.com/search?q=otter"
@@ -478,7 +478,7 @@ it is not recommended to perform extended UNION tests if there is not at least o
 [*] shutting down at 00:54:49
 ```
 
-- Other forms and appliacations at imgur are not suitable for SQLmap tests, because they're not using url querries or there are some additional securities like reCAPTCHA.
+- Other forms and applications at imgur are not suitable for SQLmap tests, because they're not using URL queries or there are some additional securities like reCAPTCHA.
 ![imgur login form reCAPTCHA](https://i.imgur.com/RG6yDNU.png)
 
 #### Exploitation - Burpsuite & SQLi
@@ -625,7 +625,7 @@ x' OR 1=1 OR 'x'='y
 ## 5. Cross Site Scripting
 - Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. 
 - It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. 
-- Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform, and to access any of the user's data. 
+- Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform and to access any of the user's data. 
 - If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.
 
 ### Reflected cross-site scripting
@@ -726,11 +726,11 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 - **Imgurs advanced search functions seems durable to the XSS.**
 
 ## 6. User security / Authentication bypass
-- In this section we'll slightly focus at the individual user security. 
+- In this section, we'll slightly focus on individual user security. 
 - We've tried some lighter bruteforcing attack at the login page using once again burpsuite payloads.
-- There could be many possible combination of most used passwords and common usernames.
-- Let's just test the login process security using only few credentials. 
-- First two usernames are invalid, the third one is valid.
+- There could be many possible combinations of most used passwords and common usernames.
+- Let's just test the login process security using only a few credentials. 
+- The first two usernames are invalid, the third one is valid.
 - Same with the passwords.
 ```html
 Usernames:
@@ -744,9 +744,9 @@ imhungry54
 strongpassword123
 password1
 ```
-- The only valid comination of username and password for login is 'ehatest' and 'password1'.
-- Lets see if we log in when using automated tool even if we get the right combination of username and password.
-- Thats how the signin form looks like. 
+- The only valid combination of username and password for login is 'ehatest' and 'password1'.
+- Let's see if we log in when using the automated tool even if we get the right combination of username and password.
+- That's how the sign in form looks like. 
 ```html
  <form id="signin-form" method="post" action="">
         <div class="signin-imgur core-dark core-shadow br5">
@@ -823,16 +823,16 @@ password1
 - **The sign in form is durable to automated bruteforce tools techniques.**
 
 ## Conclusion
-Now it is the time to summarize the informations gathered and tested.
+Now it is the time to summarize the pieces of information gathered and tested.
 - **Image search application is durable to the command injection technique.**
-- **Image upload form is somehow durable to the uintended image formats because there could've been more into depth analysis for the potentional harm of file uploaded.**
-- **Imgur is durable to php remote code executions via uploaded images.**
-- **Imgur is durable to SQLi via search function and login/register forms.**
-- **Imgurs advanced search functions seems durable to the XSS.**
-- **The sign in form is durable to automated bruteforce tools techniques.**
-- Other segments were not suspicous in for vulenerability at the time of information gathering, therfore were not tested.
+- **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
+- **Imgur is durable to PHP remote code executions via uploaded images.**
+- **Imgur is durable to SQLi via the search function and login/register forms.**
+- **Imgurs advanced search functions seem durable to the XSS.**
+- **The sign in form is durable to automated brute force tools techniques.**
+- Other segments were not suspicious in for vulnerability at the time of information gathering, therefore they were not tested.
 
-*We've learned a lot about ethical hackings and bug bounty programs during this work. It was an ebojoyable time.*
+*We've learned a lot about ethical hackings and bug bounty programs during this work. It was an enjoyable time.*
 *- Jiří Pašek, Patrik Martinec*
 
 ### References
