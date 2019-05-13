@@ -748,6 +748,7 @@ password1
 - Lets see if we log in when using automated tool even if we get the right combination of username and password.
 - Thats how the signin form looks like. 
  <form id="signin-form" method="post" action="">
+
 ```html
         <div class="signin-imgur core-dark core-shadow br5">
             
