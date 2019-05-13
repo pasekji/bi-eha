@@ -841,4 +841,4 @@ Now it is the time to summarize the informations gathered and tested.
 - [3] Acunetix. Acunetix [online]. Acunetix: Acunetix, 2018 [quoted. 2019-05-12]. Available from: https://www.acunetix.com/websitesecurity/sql-injection/
 - [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Available from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
 - [5] Portswigger. Portswigger - Cross site scripting [online]. Portswigger: Portswigger, 2018 [quoted. 2019-05-13]. Available from: https://portswigger.net/web-security/cross-site-scripting
-- İsmail Taşdelen, Cross Site Scripting ( XSS ) Vulnerability Payload List, (2013), GitHub repository,https://github.com/ismailtasdelen/xss-payload-list
+- İsmail Taşdelen, Cross Site Scripting ( XSS ) Vulnerability Payload List, (2019), GitHub repository,https://github.com/ismailtasdelen/xss-payload-list
