@@ -475,7 +475,6 @@ it is not recommended to perform extended UNION tests if there is not at least o
 [00:54:49] [WARNING] Referer parameter 'Referer' does not seem to be injectable
 [00:54:49] [CRITICAL] all tested parameters do not appear to be injectable. Also, you can try to rerun by providing a valid value for option '--string' as perhaps the string you have chosen does not match exclusively True responses. If you suspect that there is some kind of protection mechanism involved (e.g. WAF) maybe you could try to use option '--tamper' (e.g. '--tamper=space2comment')
 
-
 [*] shutting down at 00:54:49
 ```
 
@@ -719,8 +718,11 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 ';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//></SCRIPT>!--<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>=&{}
 '';!--"<XSS>=&{()}
 ```
-- one more payload list also used from [GitHub - ismailtasdelen](https://github.com/ismailtasdelen/xss-payload-list)
+- burpsuite sniper attack was established to test the 'q_type' parametr
 ![XSS burpsuite payload](https://i.imgur.com/lafkLqE.png)
+- one more payload list also used from [GitHub - ismailtasdelen](https://github.com/ismailtasdelen/xss-payload-list)
+- We have not discovered any proof of true xss vulnerablity while searching for all of tree xss types from above.
+- **Imgurs advanced search functions seems durable to the XSS.**
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
