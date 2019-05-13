@@ -312,7 +312,7 @@ system($cmd);
 ```
 
 - We will try either spoofing the file extensions or injecting the the code to this image. 
-![Sneaky Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
+![Smug Pepe](https://pepethefrogfaith.files.wordpress.com/2016/11/smug-pepe2.jpg?w=640)
 - First let's try to upload a php script file. 
 ![PHP script file](https://i.imgur.com/otwpqzK.png)
 - The image upload form don't accept this file, simple change of extension isn't enough, let's try injecting the code to the legit image file.
@@ -618,6 +618,7 @@ x' OR 1=1 OR 'x'='y
 ![SQLi payload render output](https://i.imgur.com/zFon9yT.png)
 - When the automated proccess is not possible, lets try to test some SQLi querries manually.
 - There is no sign of SQLi injectability after testing each and every querry from above manully.
+- We analyzed each and every response from above and have not found anything suspicious.
 ![SQLi manual testing](https://i.imgur.com/4Xn0h9s.png)
 - **Imgur is durable to SQLi via search function and login/register forms.**
 
@@ -721,7 +722,7 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 - burpsuite sniper attack was established to test the 'q_type' parametr
 ![XSS burpsuite payload](https://i.imgur.com/lafkLqE.png)
 - one more payload list also used from [GitHub - ismailtasdelen](https://github.com/ismailtasdelen/xss-payload-list)
-- We have not discovered any proof of true xss vulnerablity while searching for all of tree xss types from above.
+- After analyzing responses we have not discovered any proof of true xss vulnerablity while searching for all of tree xss types from above.
 - **Imgurs advanced search functions seems durable to the XSS.**
 
 ### References
