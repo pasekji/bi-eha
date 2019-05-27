@@ -1,6 +1,8 @@
 # Imgur bug bounty report
 _"The most awesome images on the Internet."_
 
+_Imgur is the easiest way to discover and enjoy the magic of the Internet. It’s where you’ll find the funniest, most informative and inspiring images, memes, GIFs, and visual stories served up in an endless stream of bite-sized fun. Powered by a passionate community of people from all around the world, anyone can join to share cool stuff and vote the best to the top._
+
 Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/imgur). 
 
 ## Policy
