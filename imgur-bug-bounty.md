@@ -303,6 +303,7 @@ doggo
 - There are several commands, such as **sleep 10**, which need some time to respond. Therefore even if it seemed we were not successful and we did not get any reasonable response, we can still consider that the command was successfully injected, if a significant delay in response occurred.
 - After checking the responses, there wasn't any sign of the possibility of command injection vulnerability via the image search bar. No significant delays also weren't the case.
 - **Image search application is durable to the command injection technique.**
+- **Video to gif function was also tested here with no vulnerable outcomes. - imgur.com/vidgif**
 
 ## 3. Remote Code Execution
 - Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
@@ -342,6 +343,8 @@ system($cmd);
 - The backdoor shell script injection was also inconclusive due to the same reasons. 
 - **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
 - **Imgur is durable to PHP remote code executions via uploaded images.**
+- **Video to gif function was also tested for remote code execution with no vulnerable outcomes. - imgur.com/vidgif**
+
 
 ## 4. SQL injection
 - SQL Injection (SQLi) is a type of injection attack that makes it possible to execute malicious SQL statements. 
@@ -636,7 +639,10 @@ x' OR 1=1 OR 'x'='y
 - There is no sign of SQLi injectability after testing each and every querry from above manully.
 - We analyzed each and every response from above and have not found anything suspicious.
 ![SQLi manual testing](https://i.imgur.com/4Xn0h9s.png)
+- **All fields (username, password, email, etc...) were tested in this part.**
 - **Imgur is durable to SQLi via search function and login/register forms.**
+- **Imgur profile settings fields were also tested for SQLi with no vulnerable outcomes. - imgur.com/account/settings**
+
 
 ## 5. Cross Site Scripting
 - Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. 
@@ -740,6 +746,10 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 - one more payload list also used from [GitHub - ismailtasdelen](https://github.com/ismailtasdelen/xss-payload-list)
 - After analyzing responses we have not discovered any proof of true xss vulnerablity while searching for all of tree xss types from above.
 - **Imgurs advanced search functions seems durable to the XSS.**
+- **Imgur profile settings fields were also tested for XSS with no vulnerable outcomes. - imgur.com/account/settings**
+- **Video to gif function was also tested for XSS with no vulnerable outcomes. - imgur.com/vidgif**
+- **Imgur login/register forms were also tested for XSS with no vulnerable outcomes.**
+
 
 ## 6. User security / Authentication bypass
 - In this section, we'll slightly focus on individual user security. 
