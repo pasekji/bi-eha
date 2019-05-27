@@ -41,6 +41,7 @@ We are interested in hearing about any security flaw. This could include, but is
 ### Domains under Scope
 - imgur.com
 - i.imgur.com
+- api.imgur.com
 
 ### Vulnerability Types
 * Remote Shell / Command Injection
@@ -839,6 +840,7 @@ password1
 
 ## Conclusion
 Now it is the time to summarize the pieces of information gathered and tested.
+- API domain was not tested. (api.imgur.com)
 - **Image search application is durable to the command injection technique.**
 - **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
 - **Imgur is durable to PHP remote code executions via uploaded images.**
