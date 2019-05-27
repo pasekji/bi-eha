@@ -1,7 +1,21 @@
 # Imgur bug bounty report
 _"The most awesome images on the Internet."_
 
-_Imgur is the easiest way to discover and enjoy the magic of the Internet. It’s where you’ll find the funniest, most informative and inspiring images, memes, GIFs, and visual stories served up in an endless stream of bite-sized fun. Powered by a passionate community of people from all around the world, anyone can join to share cool stuff and vote the best to the top._
+## The Imgur Story
+Imgur is the easiest way to discover and enjoy the magic of the Internet. Every day, millions of people use Imgur to be entertained and inspired by funny, heartwarming and helpful images and stories from all around the world.
+Imgur was started in Athens, Ohio as Alan Schaaf's side project as he attended Ohio University for computer science. The service, which the creator first described as "an image hosting service that doesn't suck," was created as a response to the usability problems encountered in similar services. Imgur took off almost instantly, jumping from a thousand hits per day to a million total page views in the first five months. Imgur became widely recognized following its rise to popularity on social news websites such as reddit and Digg.
+In the beginning, Imgur relied on donations to help with the web hosting costs. As the site grew, additional sources of revenue were needed to keep up with demand. Display ads were introduced in May 2009; sponsored images and self-service ads were introduced in 2013.
+In order to scale and manage growth, Imgur used three different hosting providers in the first year before settling on Voxel, then switching to Amazon Web Services in late 2011.
+In January 2011, the company moved from Ohio to San Francisco, CA. We won the Best Bootstrapped Startup award at TechCrunch's 2012 and 2014 Crunchies Awards. In April 2014, Imgur accepted a $40 million investment from Andreessen Horowitz, along with a smaller contribution from reddit. We currently have over 60 employees and quite a lot of office dogs.
+
+### Timeline of Imgur
+- 2009: Alan Schaaf creates and launches Imgur in his Ohio University dorm room as a simple, no-limits platform to shares images online.
+- 2010: Imgur launches the Gallery, which organizes and showcases the most popular visual stories on Imgur.
+- 2011: Imgur wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards.
+- 2012: Imgur launches User Submitted, giving Imgurians new ways to share images on Imgur, explore and curate content.
+- 2013: Imgur crosses 100 million monthly active users and wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards for the second time.
+- 2014: Imgur raises $40 million from Andreessen Horowitz and reddit, its first external investment.
+- 2015: Imgur crosses 150 million monthly active users and wins 2015 Webby awards for Best Social Media and Best Community Website.
 
 Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/imgur). 
 
