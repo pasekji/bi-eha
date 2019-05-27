@@ -303,7 +303,7 @@ doggo
 - There are several commands, such as **sleep 10**, which need some time to respond. Therefore even if it seemed we were not successful and we did not get any reasonable response, we can still consider that the command was successfully injected, if a significant delay in response occurred.
 - After checking the responses, there wasn't any sign of the possibility of command injection vulnerability via the image search bar. No significant delays also weren't the case.
 - **Image search application is durable to the command injection technique.**
-- **Video to gif function was also tested here with no vulnerable outcomes. - imgur.com/vidgif**
+- **Video to gif function was also tested for command injection with above test with no vulnerable outcomes. - imgur.com/vidgif**
 
 ## 3. Remote Code Execution
 - Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
@@ -343,7 +343,7 @@ system($cmd);
 - The backdoor shell script injection was also inconclusive due to the same reasons. 
 - **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
 - **Imgur is durable to PHP remote code executions via uploaded images.**
-- **Video to gif function was also tested for remote code execution with no vulnerable outcomes. - imgur.com/vidgif**
+- **Video to gif function was also tested for remote code execution with above test with no vulnerable outcomes. - imgur.com/vidgif**
 
 
 ## 4. SQL injection
@@ -641,7 +641,7 @@ x' OR 1=1 OR 'x'='y
 ![SQLi manual testing](https://i.imgur.com/4Xn0h9s.png)
 - **All fields (username, password, email, etc...) were tested in this part.**
 - **Imgur is durable to SQLi via search function and login/register forms.**
-- **Imgur profile settings fields were also tested for SQLi with no vulnerable outcomes. - imgur.com/account/settings**
+- **Imgur profile settings fields were also tested for SQLi with above test with no vulnerable outcomes. - imgur.com/account/settings**
 
 
 ## 5. Cross Site Scripting
@@ -746,9 +746,9 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 - one more payload list also used from [GitHub - ismailtasdelen](https://github.com/ismailtasdelen/xss-payload-list)
 - After analyzing responses we have not discovered any proof of true xss vulnerablity while searching for all of tree xss types from above.
 - **Imgurs advanced search functions seems durable to the XSS.**
-- **Imgur profile settings fields were also tested for XSS with no vulnerable outcomes. - imgur.com/account/settings**
-- **Video to gif function was also tested for XSS with no vulnerable outcomes. - imgur.com/vidgif**
-- **Imgur login/register forms were also tested for XSS with no vulnerable outcomes.**
+- **Imgur profile settings fields were also tested for XSS with above test with no vulnerable outcomes. - imgur.com/account/settings**
+- **Video to gif function was also tested for XSS with above test with no vulnerable outcomes. - imgur.com/vidgif**
+- **Imgur login/register forms were also tested for XSS with above test with no vulnerable outcomes.**
 
 
 ## 6. User security / Authentication bypass
@@ -850,12 +850,20 @@ password1
 
 ## Conclusion
 Now it is the time to summarize the pieces of information gathered and tested.
-- API domain was not tested. (api.imgur.com)
+- API domain (api.imgur.com) was not tested.
+- The image domain (i.imgur.com) was not tested.
 - **Image search application is durable to the command injection technique.**
+- **Video to gif function was tested for command injection with no vulnerable outcomes. - imgur.com/vidgif**
 - **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
 - **Imgur is durable to PHP remote code executions via uploaded images.**
-- **Imgur is durable to SQLi via the search function and login/register forms.**
-- **Imgurs advanced search functions seem durable to the XSS.**
+- **Video to gif function was tested for remote code execution with no vulnerable outcomes. - imgur.com/vidgif**
+- **All fields (username, password, email, etc...) were tested in SQLi part.**
+- **Imgur is durable to SQLi via search function and login/register forms.**
+- **Imgur profile settings fields were tested for SQLi with no vulnerable outcomes. - imgur.com/account/settings**
+- **Imgurs advanced search functions seems durable to the XSS.**
+- **Imgur profile settings fields were tested for XSS with no vulnerable outcomes. - imgur.com/account/settings**
+- **Video to gif function was also for XSS with no vulnerable outcomes. - imgur.com/vidgif**
+- **Imgur login/register forms were tested for XSS with no vulnerable outcomes.**
 - **The sign in form is durable to automated brute force tools techniques.**
 - Other segments were not suspicious in for vulnerability at the time of information gathering, therefore they were not tested.
 
@@ -869,3 +877,4 @@ Now it is the time to summarize the pieces of information gathered and tested.
 - [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Available from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
 - [5] Portswigger. Portswigger - Cross site scripting [online]. Portswigger: Portswigger, 2018 [quoted. 2019-05-13]. Available from: https://portswigger.net/web-security/cross-site-scripting
 - [6] İsmail Taşdelen, Cross Site Scripting ( XSS ) Vulnerability Payload List, (2019), GitHub repository,https://github.com/ismailtasdelen/xss-payload-list
+- https://help.imgur.com/hc/en-us/articles/201424856-History
