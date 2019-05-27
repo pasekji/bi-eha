@@ -40,7 +40,6 @@ We are interested in hearing about any security flaw. This could include, but is
 
 ### Domains under Scope
 - imgur.com
-- api.imgur.com
 - i.imgur.com
 
 ### Vulnerability Types
