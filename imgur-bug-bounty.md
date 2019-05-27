@@ -9,13 +9,13 @@ In order to scale and manage growth, Imgur used three different hosting provider
 In January 2011, the company moved from Ohio to San Francisco, CA. We won the Best Bootstrapped Startup award at TechCrunch's 2012 and 2014 Crunchies Awards. In April 2014, Imgur accepted a $40 million investment from Andreessen Horowitz, along with a smaller contribution from reddit. We currently have over 60 employees and quite a lot of office dogs.
 
 ### Timeline of Imgur
-- *2009*: Alan Schaaf creates and launches Imgur in his Ohio University dorm room as a simple, no-limits platform to shares images online.
-- *2010*: Imgur launches the Gallery, which organizes and showcases the most popular visual stories on Imgur.
-- *2011*: Imgur wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards.
-- *2012*: Imgur launches User Submitted, giving Imgurians new ways to share images on Imgur, explore and curate content.
-- *2013*: Imgur crosses 100 million monthly active users and wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards for the second time.
-- *2014*: Imgur raises $40 million from Andreessen Horowitz and reddit, its first external investment.
-- *2015*: Imgur crosses 150 million monthly active users and wins 2015 Webby awards for Best Social Media and Best Community Website.
+- **2009**: Alan Schaaf creates and launches Imgur in his Ohio University dorm room as a simple, no-limits platform to shares images online.
+- **2010**: Imgur launches the Gallery, which organizes and showcases the most popular visual stories on Imgur.
+- **2011**: Imgur wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards.
+- **2012**: Imgur launches User Submitted, giving Imgurians new ways to share images on Imgur, explore and curate content.
+- **2013**: Imgur crosses 100 million monthly active users and wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards for the second time.
+- **2014**: Imgur raises $40 million from Andreessen Horowitz and reddit, its first external investment.
+- **2015**: Imgur crosses 150 million monthly active users and wins 2015 Webby awards for Best Social Media and Best Community Website.
 
 Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/imgur). 
 
