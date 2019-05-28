@@ -68,7 +68,7 @@ We are interested in hearing about any security flaw. This could include, but is
 - Nexpose did not find anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselves.
 
 ### Threat model
-**Threat model diagram**
+- **Threat model diagram**
 ![Threat model diagram](threat-model.png)
 
 ## 2. Remote Shell / Command Injection
