@@ -3,10 +3,10 @@ _"The most awesome images on the Internet."_
 
 ## The Imgur Story
 Imgur is the easiest way to discover and enjoy the magic of the Internet. Every day, millions of people use Imgur to be entertained and inspired by funny, heartwarming and helpful images and stories from all around the world.
-Imgur was started in Athens, Ohio as Alan Schaaf's side project as he attended Ohio University for computer science. The service, which the creator first described as "an image hosting service that doesn't suck," was created as a response to the usability problems encountered in similar services. Imgur took off almost instantly, jumping from a thousand hits per day to a million total page views in the first five months. Imgur became widely recognized following its rise to popularity on social news websites such as reddit and Digg.
+Imgur was started in Athens, Ohio as Alan Schaaf's side project as he attended Ohio University for computer science. The service, which the creator first described as "an image hosting service that doesn't suck," was created as a response to the usability problems encountered in similar services. Imgur took off almost instantly, jumping from a thousand hits per day to a million total page views in the first five months. Imgur became widely recognized following its rise to popularity on social news websites such as Reddit and Digg.
 In the beginning, Imgur relied on donations to help with the web hosting costs. As the site grew, additional sources of revenue were needed to keep up with demand. Display ads were introduced in May 2009; sponsored images and self-service ads were introduced in 2013.
 In order to scale and manage growth, Imgur used three different hosting providers in the first year before settling on Voxel, then switching to Amazon Web Services in late 2011.
-In January 2011, the company moved from Ohio to San Francisco, CA. We won the Best Bootstrapped Startup award at TechCrunch's 2012 and 2014 Crunchies Awards. In April 2014, Imgur accepted a $40 million investment from Andreessen Horowitz, along with a smaller contribution from reddit. We currently have over 60 employees and quite a lot of office dogs.
+In January 2011, the company moved from Ohio to San Francisco, CA. We won the Best Bootstrapped Startup award at TechCrunch's 2012 and 2014 Crunchies Awards. In April 2014, Imgur accepted a $40 million investment from Andreessen Horowitz, along with a smaller contribution from Reddit. We currently have over 60 employees and quite a lot of office dogs.
 
 ### Timeline of Imgur
 - **2009**: Alan Schaaf creates and launches Imgur in his Ohio University dorm room as a simple, no-limits platform to shares images online.
@@ -14,7 +14,7 @@ In January 2011, the company moved from Ohio to San Francisco, CA. We won the Be
 - **2011**: Imgur wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards.
 - **2012**: Imgur launches User Submitted, giving Imgurians new ways to share images on Imgur, explore and curate content.
 - **2013**: Imgur crosses 100 million monthly active users and wins "Best Bootstrapped Startup" at the TechCrunch "Crunchies" Awards for the second time.
-- **2014**: Imgur raises $40 million from Andreessen Horowitz and reddit, its first external investment.
+- **2014**: Imgur raises $40 million from Andreessen Horowitz and Reddit, its first external investment.
 - **2015**: Imgur crosses 150 million monthly active users and wins 2015 Webby awards for Best Social Media and Best Community Website.
 
 Imgur bug bounty program is provided by [HackerOne.com](https://hackerone.com/imgur). 
@@ -260,7 +260,7 @@ generateSessionToken();
 
 ### Imgur search bar - Command Injection testing
 - In this test, we'll use our list of test commands and the burpsuite tool.
-- At first, let's intercept the GET request to the imgur search ability in burpsuite.
+- At first, let's intercept the GET request to the imgur searchability in burpsuite.
 - Here we've got the intercepted request of searching string "lol" in the raw format. 
 
 ```xml
@@ -310,7 +310,7 @@ doggo
 - There are several commands, such as **sleep 10**, which need some time to respond. Therefore even if it seemed we were not successful and we did not get any reasonable response, we can still consider that the command was successfully injected, if a significant delay in response occurred.
 - After checking the responses, there wasn't any sign of the possibility of command injection vulnerability via the image search bar. No significant delays also weren't the case.
 - **Image search application is durable to the command injection technique.**
-- **Video to gif function was also tested for command injection with above test with no vulnerable outcomes. - imgur.com/vidgif**
+- **Video to gif function was also tested for command injection with the above test with no vulnerable outcomes. - imgur.com/vidgif**
 
 ## 3. Remote Code Execution
 - Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
@@ -350,7 +350,7 @@ system($cmd);
 - The backdoor shell script injection was also inconclusive due to the same reasons. 
 - **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
 - **Imgur is durable to PHP remote code executions via uploaded images.**
-- **Video to gif function was also tested for remote code execution with above test with no vulnerable outcomes. - imgur.com/vidgif**
+- **Video to gif function was also tested for remote code execution with the above test with no vulnerable outcomes. - imgur.com/vidgif**
 
 
 ## 4. SQL injection
@@ -865,9 +865,9 @@ Now it is the time to summarize the pieces of information gathered and tested.
 - **Imgur is durable to PHP remote code executions via uploaded images.**
 - **Video to gif function was tested for remote code execution with no vulnerable outcomes. - imgur.com/vidgif**
 - **All fields (username, password, email, etc...) were tested in SQLi part.**
-- **Imgur is durable to SQLi via search function and login/register forms.**
+- **Imgur is durable to SQLi via the search function and login/register forms.**
 - **Imgur profile settings fields were tested for SQLi with no vulnerable outcomes. - imgur.com/account/settings**
-- **Imgurs advanced search functions seems durable to the XSS.**
+- **Imgurs advanced search functions seem durable to the XSS.**
 - **Imgur profile settings fields were tested for XSS with no vulnerable outcomes. - imgur.com/account/settings**
 - **Video to gif function was also for XSS with no vulnerable outcomes. - imgur.com/vidgif**
 - **Imgur login/register forms were tested for XSS with no vulnerable outcomes.**
