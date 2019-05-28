@@ -72,7 +72,6 @@ We are interested in hearing about any security flaw. This could include, but is
 
 ![Threat model diagram](threat-model.png)
 
-- **Detailed threat model with threat descriptions**
 [Detailed threat model with threat descriptions](threat-model-detailed.png)
 
 ## 2. Remote Shell / Command Injection
