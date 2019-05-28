@@ -69,7 +69,8 @@ We are interested in hearing about any security flaw. This could include, but is
 
 ### Threat model
 - **Threat model diagram**
-- ![Threat model diagram](threat-model.png)
+
+![Threat model diagram](threat-model.png)
 
 ## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is an execution of arbitrary commands on the host operating system via a vulnerable application. 
