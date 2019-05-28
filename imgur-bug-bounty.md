@@ -67,6 +67,9 @@ We are interested in hearing about any security flaw. This could include, but is
 - The rest contained only some TLS/SSL and Cookie headers, that are not required in the bug bounty program scope, but we could still examine them in the spare time.  
 - Nexpose did not find anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselves.
 
+### Threat model
+**Threat model diagram**
+
 ## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is an execution of arbitrary commands on the host operating system via a vulnerable application. 
 Command injection attacks are possible when an application passes unsafe user-supplied data (forms, cookies, HTTP headers, etc.) to a system shell. 
