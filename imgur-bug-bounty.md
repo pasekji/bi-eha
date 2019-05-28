@@ -884,4 +884,4 @@ Now it is the time to summarize the pieces of information gathered and tested.
 - [4] Null-byte.wonderhowto.com. Null-byte.wonderhowto.com [online]. null-byte.wonderhowto.com: null-byte.wonderhowto.com, 2018 [quoted. 2019-05-12]. Available from: https://null-byte.wonderhowto.com/how-to/attack-web-applications-with-burp-suite-sql-injection-0184090/
 - [5] Portswigger. Portswigger - Cross site scripting [online]. Portswigger: Portswigger, 2018 [quoted. 2019-05-13]. Available from: https://portswigger.net/web-security/cross-site-scripting
 - [6] İsmail Taşdelen, Cross Site Scripting ( XSS ) Vulnerability Payload List, (2019), GitHub repository,https://github.com/ismailtasdelen/xss-payload-list
-- https://help.imgur.com/hc/en-us/articles/201424856-History
+- [7] Imgur.com History. Imgur [online]. San Francisco, CA, USA: imgur, 2016 [quoted. 2019-05-28]. Available from: https://help.imgur.com/hc/en-us/articles/201424856-History
