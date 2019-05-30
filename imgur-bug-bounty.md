@@ -2,8 +2,8 @@
 _"The most awesome images on the Internet."_
 
 ### Team info
-- Jiří Pašek
-- Patrik Martinec
+- Jiří Pašek (pasekji1)
+- ~~Patrik Martinec (martipa9)~~
 
 ### Score system
 - 'durable' - nothing that seems somehow vulnerable, secured...
@@ -884,7 +884,7 @@ Now it is the time to summarize the pieces of information gathered and tested.
 - Other segments were not suspicious in for vulnerability at the time of information gathering, therefore they were not tested.
 
 *We've learned a lot about ethical hackings and bug bounty programs during this work. It was an enjoyable time.*
-*- Jiří Pašek, Patrik Martinec*
+*- Jiří Pašek, ~~Patrik Martinec~~*
 
 ### References
 - [1] Command Injection - OWASP. Command Injection - OWASP [online]. Texas, USA: OWASP Foundation, 2018 [quoted. 2019-04-13]. Available from: https://www.owasp.org/index.php/Command_Injection
