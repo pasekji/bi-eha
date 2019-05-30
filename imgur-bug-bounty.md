@@ -1,6 +1,15 @@
 # Imgur bug bounty report
 _"The most awesome images on the Internet."_
 
+### Team info
+- Jiří Pašek
+- Patrik Martinec
+
+### Score system
+- 'durable' - nothing that seems somehow vulnerable, secured...
+- 'somehow durable' - secure, but some additional layers could be used...
+- 'not durable' - insecure, open threat...
+
 ## The Imgur Story
 Imgur is the easiest way to discover and enjoy the magic of the Internet. Every day, millions of people use Imgur to be entertained and inspired by funny, heartwarming and helpful images and stories from all around the world.
 Imgur was started in Athens, Ohio as Alan Schaaf's side project as he attended Ohio University for computer science. The service, which the creator first described as "an image hosting service that doesn't suck," was created as a response to the usability problems encountered in similar services. Imgur took off almost instantly, jumping from a thousand hits per day to a million total page views in the first five months. Imgur became widely recognized following its rise to popularity on social news websites such as Reddit and Digg.
