@@ -1,6 +1,13 @@
 # Imgur bug bounty report
 _"The most awesome images on the Internet."_
 
+### Report structure
+1.  Introduction, threat theory, vulnerability description
+2.  Information gathering, threat modeling, discoveries, findings
+3.  Testing walk-through with technical details
+
+# Introduction, threat theory, vulnerability description
+
 ### Team info
 - Jiří Pašek (pasekji1)
 - ~~Patrik Martinec (martipa9)~~
@@ -63,25 +70,6 @@ We are interested in hearing about any security flaw. This could include, but is
 * Server Side Request Forgery
 * Stored Cross-Site Scripting
 * Other Cross-Site Scripting
-
-## 1. Information Gathering
-- We need to gather some information about our target before the testing process. 
-- There're two useful tools which we'll use for information gathering - Maltego and Nexpose.
-- [Maltego PDF export](https://docdro.id/L4E7PyY)
-- [Nexpose audit export](imgur_nexpose_report/Document.md)
-- We can see that the imgur security level is quite advanced and probably only experts in ethical hacking could break the more advanced vulnerabilities.
-- No critical issues occurred, all the issues were only at a severe level. 
-- Nexpose found some XSS vulnerabilities and we will examine and test them.[XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
-- There is also autocomplete enabled for sensitive HTML formats, that could be also some harmful issue. [Autocomplete HTML forms](imgur_nexpose_report/Document.md#326-autocomplete-enabled-for-sensitive-html-form-fields-spider-sensitive-form-data-autocomplete-enabled )
-- The rest contained only some TLS/SSL and Cookie headers, that are not required in the bug bounty program scope, but we could still examine them in the spare time.  
-- Nexpose did not find anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselves.
-
-### Threat model
-- **Threat model diagram**
-
-![Threat model diagram](threat-model.png)
-
-[Detailed threat model with threat descriptions](threat-model-detailed.png)
 
 ## 2. Remote Shell / Command Injection
 Command injection is an attack in which the goal is an execution of arbitrary commands on the host operating system via a vulnerable application. 
@@ -267,6 +255,123 @@ generateSessionToken();
 ?> 
 ```
 
+## 3. Remote Code Execution
+- Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
+- It can be viewed as the execution of some potentially harmful binary file at the target remote server.
+
+## 4. SQL injection
+- SQL Injection (SQLi) is a type of injection attack that makes it possible to execute malicious SQL statements. 
+- These statements control a database server behind a web application. 
+- Attackers can use SQL Injection vulnerabilities to bypass application security measures. 
+- They can go around authentication and authorization of a web page or web application and retrieve the content of the entire SQL database. 
+- They can also use SQL Injection to add, modify, and delete records in the database.
+
+#### How to prevent SQLi? 
+- The only sure way to prevent SQL Injection attacks is input validation and parametrized queries including prepared statements. 
+- The application code should never use the input directly. 
+- The developer must sanitize all input, not only web form inputs such as login forms. 
+- They must remove potential malicious code elements such as single quotes. 
+- It is also a good idea to turn off the visibility of database errors on your production sites. 
+- Database errors can be used with SQL Injection to gain information about your database.
+- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL queries directly through the text forms.
+
+## 5. Cross Site Scripting
+- Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. 
+- It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. 
+- Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform and to access any of the user's data. 
+- If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.
+
+### Reflected cross-site scripting
+- Reflected XSS is the simplest variety of cross-site scripting. 
+- It arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.
+- Here is a simple example of a reflected XSS vulnerability:
+```html
+https://insecure-website.com/status?message=All+is+well.
+
+<p>Status: All is well.</p>
+```
+- The application doesn't perform any other processing of the data, so an attacker can easily construct an attack like this:
+```html
+https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</script>
+
+<p>Status: <script>/* Bad stuff here... */</script></p>
+```
+- If the user visits the URL constructed by the attacker, then the attacker's script executes in the user's browser, in the context of that user's session with the application. 
+- At that point, the script can carry out any action, and retrieve any data, to which the user has access.
+
+### Stored cross-site scripting
+- Stored XSS (also known as persistent or second-order XSS) arises when an application receives data from an untrusted source and includes that data within its later HTTP responses in an unsafe way.
+- The data in question might be submitted to the application via HTTP requests; for example, comments on a blog post, user nicknames in a chat room, or contact details on a customer order. In other cases, the data might arrive from other untrusted sources; for example, a webmail application displaying messages received over SMTP, a marketing application displaying social media posts, or a network monitoring application displaying packet data from network traffic.
+- Here is a simple example of a stored XSS vulnerability. A message board application lets users submit messages, which are displayed to other users:
+```html
+<p>Hello, this is my message!</p>
+```
+- The application doesn't perform any other processing of the data, so an attacker can easily send a message that attacks other users:
+```html
+<p><script>/* Bad stuff here... */</script></p>
+```
+
+### DOM-based cross-site scripting
+- DOM-based XSS (also known as DOM XSS) arises when an application contains some client-side JavaScript that processes data from an untrusted source in an unsafe way, usually by writing the data back to the DOM.
+- In the following example, an application uses some JavaScript to read the value from an input field and write that value to an element within the HTML:
+```javascript
+var search = document.getElementById('search').value;
+var results = document.getElementById('results');
+results.innerHTML = 'You searched for: ' + search;
+```
+- If the attacker can control the value of the input field, they can easily construct a malicious value that causes their own script to execute:
+```html
+You searched for: <img src=1 onerror='/* Bad stuff here... */'>
+```
+- In a typical case, the input field would be populated from part of the HTTP request, such as a URL query string parameter, allowing the attacker to deliver an attack using a malicious URL, in the same manner as reflected XSS.
+
+## 6. User security / Authentication bypass
+- Authentication plays a critical role in the security of web applications. 
+- When a user provides his login name and password to authenticate and prove his identity, the application assigns the user specific privileges to the system, based on the identity established by the supplied credentials.
+- It is often possible to bypass authentication measures by tampering with requests and tricking the application into thinking that we're already authenticated. 
+- This can be accomplished either by modifying the given URL parameter or by manipulating the form or by counterfeiting sessions.
+
+# Information gathering, threat modeling, discoveries, findings
+
+## 1. Information Gathering
+- We need to gather some information about our target before the testing process. 
+- There're two useful tools which we'll use for information gathering - Maltego and Nexpose.
+- [Maltego PDF export](https://docdro.id/L4E7PyY)
+- [Nexpose audit export](imgur_nexpose_report/Document.md)
+- We can see that the imgur security level is quite advanced and probably only experts in ethical hacking could break the more advanced vulnerabilities.
+- No critical issues occurred, all the issues were only at a severe level. 
+- Nexpose found some XSS vulnerabilities and we will examine and test them.[XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
+- There is also autocomplete enabled for sensitive HTML formats, that could be also some harmful issue. [Autocomplete HTML forms](imgur_nexpose_report/Document.md#326-autocomplete-enabled-for-sensitive-html-form-fields-spider-sensitive-form-data-autocomplete-enabled )
+- The rest contained only some TLS/SSL and Cookie headers, that are not required in the bug bounty program scope, but we could still examine them in the spare time.  
+- Nexpose did not find anything related to Remote execution, Command Injection or SQL Injection, but there is no reason to test it manually ourselves.
+
+### Threat model
+- **Threat model diagram**
+
+![Threat model diagram](threat-model.png)
+
+[Detailed threat model with threat descriptions](threat-model-detailed.png)
+
+## Conclusion of results and discoveries
+Now it is the time to summarize the pieces of information gathered and tested.
+- API domain (api.imgur.com) was not tested.
+- The image domain (i.imgur.com) was not tested.
+- **Image search application is durable to the command injection technique.**
+- **Video to gif function was tested for command injection with no vulnerable outcomes. - imgur.com/vidgif**
+- **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
+- **Imgur is durable to PHP remote code executions via uploaded images.**
+- **Video to gif function was tested for remote code execution with no vulnerable outcomes. - imgur.com/vidgif**
+- **All fields (username, password, email, etc...) were tested in SQLi part.**
+- **Imgur is durable to SQLi via the search function and login/register forms.**
+- **Imgur profile settings fields were tested for SQLi with no vulnerable outcomes. - imgur.com/account/settings**
+- **Imgurs advanced search functions seem durable to the XSS.**
+- **Imgur profile settings fields were tested for XSS with no vulnerable outcomes. - imgur.com/account/settings**
+- **Video to gif function was also for XSS with no vulnerable outcomes. - imgur.com/vidgif**
+- **Imgur login/register forms were tested for XSS with no vulnerable outcomes.**
+- **The sign in form is durable to automated brute force tools techniques.**
+- Other segments were not suspicious in for vulnerability at the time of information gathering, therefore they were not tested.
+
+
 ### Imgur search bar - Command Injection testing
 - In this test, we'll use our list of test commands and the burpsuite tool.
 - At first, let's intercept the GET request to the imgur searchability in burpsuite.
@@ -321,9 +426,7 @@ doggo
 - **Image search application is durable to the command injection technique.**
 - **Video to gif function was also tested for command injection with the above test with no vulnerable outcomes. - imgur.com/vidgif**
 
-## 3. Remote Code Execution
-- Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
-- It can be viewed as the execution of some potentially harmful binary file at the target remote server.
+
 - We will try to exploit the RCE via image upload function by uploading the exploitable PHP or JS script with spoofed extension.
 
 #### Simple PHP test script
@@ -361,22 +464,6 @@ system($cmd);
 - **Imgur is durable to PHP remote code executions via uploaded images.**
 - **Video to gif function was also tested for remote code execution with the above test with no vulnerable outcomes. - imgur.com/vidgif**
 
-
-## 4. SQL injection
-- SQL Injection (SQLi) is a type of injection attack that makes it possible to execute malicious SQL statements. 
-- These statements control a database server behind a web application. 
-- Attackers can use SQL Injection vulnerabilities to bypass application security measures. 
-- They can go around authentication and authorization of a web page or web application and retrieve the content of the entire SQL database. 
-- They can also use SQL Injection to add, modify, and delete records in the database.
-
-#### How to prevent SQLi? 
-- The only sure way to prevent SQL Injection attacks is input validation and parametrized queries including prepared statements. 
-- The application code should never use the input directly. 
-- The developer must sanitize all input, not only web form inputs such as login forms. 
-- They must remove potential malicious code elements such as single quotes. 
-- It is also a good idea to turn off the visibility of database errors on your production sites. 
-- Database errors can be used with SQL Injection to gain information about your database.
-- SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL queries directly through the text forms.
 
 #### Exploitation - SQLmap tool
 - SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
@@ -660,55 +747,6 @@ x' OR 1=1 OR 'x'='y
 - **Imgur profile settings fields were also tested for SQLi with above test with no vulnerable outcomes. - imgur.com/account/settings**
 
 
-## 5. Cross Site Scripting
-- Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. 
-- It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. 
-- Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform and to access any of the user's data. 
-- If the victim user has privileged access within the application, then the attacker might be able to gain full control over all of the application's functionality and data.
-
-### Reflected cross-site scripting
-- Reflected XSS is the simplest variety of cross-site scripting. 
-- It arises when an application receives data in an HTTP request and includes that data within the immediate response in an unsafe way.
-- Here is a simple example of a reflected XSS vulnerability:
-```html
-https://insecure-website.com/status?message=All+is+well.
-
-<p>Status: All is well.</p>
-```
-- The application doesn't perform any other processing of the data, so an attacker can easily construct an attack like this:
-```html
-https://insecure-website.com/status?message=<script>/*+Bad+stuff+here...+*/</script>
-
-<p>Status: <script>/* Bad stuff here... */</script></p>
-```
-- If the user visits the URL constructed by the attacker, then the attacker's script executes in the user's browser, in the context of that user's session with the application. 
-- At that point, the script can carry out any action, and retrieve any data, to which the user has access.
-
-### Stored cross-site scripting
-- Stored XSS (also known as persistent or second-order XSS) arises when an application receives data from an untrusted source and includes that data within its later HTTP responses in an unsafe way.
-- The data in question might be submitted to the application via HTTP requests; for example, comments on a blog post, user nicknames in a chat room, or contact details on a customer order. In other cases, the data might arrive from other untrusted sources; for example, a webmail application displaying messages received over SMTP, a marketing application displaying social media posts, or a network monitoring application displaying packet data from network traffic.
-- Here is a simple example of a stored XSS vulnerability. A message board application lets users submit messages, which are displayed to other users:
-```html
-<p>Hello, this is my message!</p>
-```
-- The application doesn't perform any other processing of the data, so an attacker can easily send a message that attacks other users:
-```html
-<p><script>/* Bad stuff here... */</script></p>
-```
-
-### DOM-based cross-site scripting
-- DOM-based XSS (also known as DOM XSS) arises when an application contains some client-side JavaScript that processes data from an untrusted source in an unsafe way, usually by writing the data back to the DOM.
-- In the following example, an application uses some JavaScript to read the value from an input field and write that value to an element within the HTML:
-```javascript
-var search = document.getElementById('search').value;
-var results = document.getElementById('results');
-results.innerHTML = 'You searched for: ' + search;
-```
-- If the attacker can control the value of the input field, they can easily construct a malicious value that causes their own script to execute:
-```html
-You searched for: <img src=1 onerror='/* Bad stuff here... */'>
-```
-- In a typical case, the input field would be populated from part of the HTTP request, such as a URL query string parameter, allowing the attacker to deliver an attack using a malicious URL, in the same manner as reflected XSS.
 
 #### Exploitation
 - Let's focus at the vulnerability which we found using nexpose scan earlier. 
@@ -864,24 +902,6 @@ password1
 - This is a big adventage, not every web application has this security mechanism.
 - **The sign in form is durable to automated bruteforce tools techniques.**
 
-## Conclusion
-Now it is the time to summarize the pieces of information gathered and tested.
-- API domain (api.imgur.com) was not tested.
-- The image domain (i.imgur.com) was not tested.
-- **Image search application is durable to the command injection technique.**
-- **Video to gif function was tested for command injection with no vulnerable outcomes. - imgur.com/vidgif**
-- **Image upload form is somehow durable to the unintended image formats because there could've been more into depth analysis for the potential harm of file uploaded.**
-- **Imgur is durable to PHP remote code executions via uploaded images.**
-- **Video to gif function was tested for remote code execution with no vulnerable outcomes. - imgur.com/vidgif**
-- **All fields (username, password, email, etc...) were tested in SQLi part.**
-- **Imgur is durable to SQLi via the search function and login/register forms.**
-- **Imgur profile settings fields were tested for SQLi with no vulnerable outcomes. - imgur.com/account/settings**
-- **Imgurs advanced search functions seem durable to the XSS.**
-- **Imgur profile settings fields were tested for XSS with no vulnerable outcomes. - imgur.com/account/settings**
-- **Video to gif function was also for XSS with no vulnerable outcomes. - imgur.com/vidgif**
-- **Imgur login/register forms were tested for XSS with no vulnerable outcomes.**
-- **The sign in form is durable to automated brute force tools techniques.**
-- Other segments were not suspicious in for vulnerability at the time of information gathering, therefore they were not tested.
 
 *We've learned a lot about ethical hackings and bug bounty programs during this work. It was an enjoyable time.*
 *- Jiří Pašek, ~~Patrik Martinec~~*
