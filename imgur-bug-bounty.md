@@ -71,7 +71,7 @@ We are interested in hearing about any security flaw. This could include, but is
 * Stored Cross-Site Scripting
 * Other Cross-Site Scripting
 
-## 2. Remote Shell / Command Injection
+## Remote Shell / Command Injection
 Command injection is an attack in which the goal is an execution of arbitrary commands on the host operating system via a vulnerable application. 
 Command injection attacks are possible when an application passes unsafe user-supplied data (forms, cookies, HTTP headers, etc.) to a system shell. 
 In this attack, the attacker-supplied operating system commands are usually executed with the privileges of the vulnerable application. 
@@ -255,11 +255,11 @@ generateSessionToken();
 ?> 
 ```
 
-## 3. Remote Code Execution
+## Remote Code Execution
 - Remote Code Execution attack is slightly different from the simple Command Injection exploitation. 
 - It can be viewed as the execution of some potentially harmful binary file at the target remote server.
 
-## 4. SQL injection
+## SQL injection
 - SQL Injection (SQLi) is a type of injection attack that makes it possible to execute malicious SQL statements. 
 - These statements control a database server behind a web application. 
 - Attackers can use SQL Injection vulnerabilities to bypass application security measures. 
@@ -275,7 +275,7 @@ generateSessionToken();
 - Database errors can be used with SQL Injection to gain information about your database.
 - SQLi can be done by both url querries f.e. (imgur.com/search/score?q=otter) or by passing the SQL queries directly through the text forms.
 
-## 5. Cross Site Scripting
+## Cross Site Scripting
 - Cross-site scripting (also known as XSS) is a web security vulnerability that allows an attacker to compromise the interactions that users have with a vulnerable application. 
 - It allows an attacker to circumvent the same origin policy, which is designed to segregate different websites from each other. 
 - Cross-site scripting vulnerabilities normally allow an attacker to masquerade as a victim user, to carry out any actions that the user is able to perform and to access any of the user's data. 
@@ -325,7 +325,7 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 ```
 - In a typical case, the input field would be populated from part of the HTTP request, such as a URL query string parameter, allowing the attacker to deliver an attack using a malicious URL, in the same manner as reflected XSS.
 
-## 6. User security / Authentication bypass
+## User security / Authentication bypass
 - Authentication plays a critical role in the security of web applications. 
 - When a user provides his login name and password to authenticate and prove his identity, the application assigns the user specific privileges to the system, based on the identity established by the supplied credentials.
 - It is often possible to bypass authentication measures by tampering with requests and tricking the application into thinking that we're already authenticated. 
@@ -333,7 +333,7 @@ You searched for: <img src=1 onerror='/* Bad stuff here... */'>
 
 # Information gathering, threat modeling, discoveries, findings
 
-## 1. Information Gathering
+## Information Gathering
 - We need to gather some information about our target before the testing process. 
 - There're two useful tools which we'll use for information gathering - Maltego and Nexpose.
 - [Maltego PDF export](https://docdro.id/L4E7PyY)
@@ -371,6 +371,7 @@ Now it is the time to summarize the pieces of information gathered and tested.
 - **The sign in form is durable to automated brute force tools techniques.**
 - Other segments were not suspicious in for vulnerability at the time of information gathering, therefore they were not tested.
 
+# Testing walk-through with technical details
 
 ### Imgur search bar - Command Injection testing
 - In this test, we'll use our list of test commands and the burpsuite tool.
@@ -426,7 +427,7 @@ doggo
 - **Image search application is durable to the command injection technique.**
 - **Video to gif function was also tested for command injection with the above test with no vulnerable outcomes. - imgur.com/vidgif**
 
-
+## Remote Code Execution Exploitation
 - We will try to exploit the RCE via image upload function by uploading the exploitable PHP or JS script with spoofed extension.
 
 #### Simple PHP test script
@@ -464,8 +465,7 @@ system($cmd);
 - **Imgur is durable to PHP remote code executions via uploaded images.**
 - **Video to gif function was also tested for remote code execution with the above test with no vulnerable outcomes. - imgur.com/vidgif**
 
-
-#### Exploitation - SQLmap tool
+#### SQLi Exploitation - SQLmap tool
 - SQLmap is an open source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over of database servers.
 - Works with many database types, MySQL, mssql, etc...
 - We'll start by using this tool to get the information about the injectability of the imgur service.
@@ -603,7 +603,7 @@ it is not recommended to perform extended UNION tests if there is not at least o
 - Other forms and applications at imgur are not suitable for SQLmap tests, because they're not using URL queries or there are some additional securities like reCAPTCHA.
 ![imgur login form reCAPTCHA](https://i.imgur.com/RG6yDNU.png)
 
-#### Exploitation - Burpsuite & SQLi
+#### SQLi Exploitation - Burpsuite
 - Burpsuite can be also used to test SQLi vulnerability. 
 - Because the imgur search bar did not seem injectable, we'll test the imgur login page for SQLi.
 - SQLi list of payloads tested
@@ -746,9 +746,7 @@ x' OR 1=1 OR 'x'='y
 - **Imgur is durable to SQLi via search function and login/register forms.**
 - **Imgur profile settings fields were also tested for SQLi with above test with no vulnerable outcomes. - imgur.com/account/settings**
 
-
-
-#### Exploitation
+#### XSS Exploitation
 - Let's focus at the vulnerability which we found using nexpose scan earlier. 
 - [Nexpose XSS vulnerability](imgur_nexpose_report/Document.md#321-cross-site-scripting-vulnerability-http-cgi-0010)
 - The scan founded out that the 'q_type' parameter which occures at several urls might be xss vulnerable.
@@ -804,8 +802,7 @@ x' OR 1=1 OR 'x'='y
 - **Video to gif function was also tested for XSS with above test with no vulnerable outcomes. - imgur.com/vidgif**
 - **Imgur login/register forms were also tested for XSS with above test with no vulnerable outcomes.**
 
-
-## 6. User security / Authentication bypass
+## User security / Authentication bypass testing
 - In this section, we'll slightly focus on individual user security. 
 - We've tried some lighter bruteforcing attack at the login page using once again burpsuite payloads.
 - There could be many possible combinations of most used passwords and common usernames.
